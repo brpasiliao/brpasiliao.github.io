@@ -49,6 +49,7 @@ a {
   display: flex;
   list-style: none;
   padding: 0;
+  margin-bottom: 20px;
 }
 
 .contact li {
@@ -68,6 +69,7 @@ a {
 .what {
   font-weight: bold;
   margin: 0 0 5px;
+  font-size: 20px;
 }
 
 .where-when {
@@ -75,7 +77,11 @@ a {
   margin: 0 0 5px;
 }
 
-.section-item {
+.section-item ul {
+  margin: 0;
+}
+
+#experience .section-item, #affiliations .section-item {
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-gap: 0 10px;
@@ -83,13 +89,16 @@ a {
   padding: 30px 0;
 }
 
-.section-item:first-of-type {
+#experience .section-item:first-of-type, #affiliations .section-item:first-of-type {
   border-top: none;
   padding-top: 0px;
 }
 
-.section-item ul {
-  margin: 0;
+#skills .subsection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0 20px;
+  margin-bottom: 20px;
 }
 
 #education ul {
