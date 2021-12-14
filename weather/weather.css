@@ -1,37 +1,80 @@
-h1, h2, h3, span {
+@font-face {
+  font-family: "Amarillo";
+  src: url(Amarillo.ttf);
+}
+
+body {
+  color: #222;
+  background: rgb(255, 244, 227);
   margin: 0;
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Amarillo";
 }
 
 h1 {
-  font-size: 16rem;
+  font-size: 10rem;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h3 {
   font-size: 1.4rem;
-}
-
-span {
-  font-size: 6rem;
+  margin-top: 15px;
 }
 
 .container {
   max-width: 550px;
-  height: 100vh;
-  border: 1px solid black;
+  /* height: 100vh; */
   margin: 0 auto;
-  display: grid;
-  grid-template-rows: 20% 80%;
   text-align: center;
-  padding: 25px 5px;
+  padding: 100px 5px;
+}
+
+.middle {
+  margin: 130px auto 0;
 }
 
 .degrees {
-  display: grid;
-  grid-template-columns: auto auto;
+  margin: 100px auto 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.degrees h1 {
+  padding-top: 20px;
+}
+
+p span {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: "Amarillo";
+  font-size: 2rem;
+}
+
+h1 span {
+  margin-left: 15px;
+}
+
+img {
+  margin-right: 15px;
+}
+
+#icondesc {
+  display: flex;
   justify-content: center;
-  margin-left: 2rem;
+}
+
+#info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
 }

@@ -8,14 +8,22 @@
   </head>
   <body>
     <div class="container">
-      <h2 id="city"></h2>
+      <h2 id="city">Your City</h2>
       <div class="middle">
-        <img id="icon" src="" alt="icon" />
         <div class="degrees">
-          <h1 id="temp"></h1>
-          <span>&#176;</span>
+          <p>Min:<br /><span id="min">&lt;</span></p>
+          <h1><span id="temp">?</span><span>&#176;</span></h1>
+          <p>Max:<br /><span id="max">&gt;</span></p>
         </div>
-        <h3 id="desc"></h3>
+        <div id="icondesc">
+          <img id="icon" src="" alt="icon" />
+          <h3 id="desc">weather</h3>
+        </div>
+        <div id="info">
+          <p>Feels like:<br /><span id="feel">?</span></p>
+          <p>Humidity:<br /><span id="humi">?</span></p>
+          <p>Pressure:<br /><span id="pres">?</span></p>
+        </div>
       </div>
     </div>
   </body>
