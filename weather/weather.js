@@ -22,11 +22,11 @@ $(document).ready(function () {
   function updateDOM(data) {
     var city = data.name;
     var temp = Math.round(data.main.temp);
-    var min = Math.round(data.main.temp_min) + "&#176;";
-    var max = Math.round(data.main.temp_max) + "&#176;";
+    var min = Math.round(data.main.temp_min) + "&#176;c";
+    var max = Math.round(data.main.temp_max) + "&#176;c";
     var desc = data.weather[0].description;
-    var icon = data.weather[0].icon;
-    var feel = data.main.feels_like;
+    var icon = `<img id="icon" src="${data.weather[0].icon}" alt="icon" />`;
+    var feel = Math.round(data.main.feels_like) + "&#176;c";
     var humi = data.main.humidity;
     var pres = data.main.pressure;
 
@@ -35,7 +35,7 @@ $(document).ready(function () {
     $("#min").html(min);
     $("#max").html(max);
     $("#desc").html(desc);
-    $("#icon").attr("src", icon);
+    $("#icondesc").prepend(icon);
     $("#feel").html(feel);
     $("#humi").html(humi);
     $("#pres").html(pres);
