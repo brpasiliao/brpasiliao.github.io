@@ -1,0 +1,155 @@
+html {
+  --nav-width: 250px;
+  --almost-black: #444444;
+  --almost-blacker: #333333;
+  --almost-blackest: #222222;
+  --almost-white: #fafafa;
+}
+
+body {
+  margin: 0;
+  color: var(--almost-white);
+  font-family: "Andale Mono", "Lucida Console", monospace;
+  background: var(--almost-blackest);
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 4em;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+nav {
+  position: fixed;
+  overflow: auto;
+  width: var(--nav-width);
+  height: 100%;
+  background: var(--almost-black);
+  padding: 20px 0 0 0;
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 10px 20px 10px 30px;
+  font-size: 1.5em;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: var(--almost-blacker);
+}
+
+nav a:active {
+  background: #272727;
+}
+
+.active {
+  background: var(--almost-blackest);
+}
+
+.margin {
+  margin-left: var(--nav-width);
+  max-width: 1100px;
+}
+
+.main {
+  padding: 100px 100px 100px 100px;
+  max-width: 700px;
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid var(--almost-white);
+  border-radius: 10px;
+  margin-top: 70px;
+}
+
+.card h2 {
+  margin: 0;
+}
+
+.name {
+  flex-basis: 100%;
+  padding: 30px 0 30px 30px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: background 0.3s;
+}
+
+.name h2 {
+  border-right: 1px solid var(--almost-white);
+  padding-right: 30px;
+}
+
+.gh {
+  flex-basis: auto;
+  display: flex;
+  text-align: right;
+  height: inherit;
+  padding: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: background 0.3s;
+}
+
+.gh h2 {
+  margin: auto 0;
+}
+
+.name:hover,
+.gh:hover {
+  background: var(--almost-black);
+}
+
+.name:active,
+.gh:active {
+  background: var(--almost-blacker);
+}
+
+.sources {
+  margin-bottom: 0;
+}
+
+.main ul {
+  margin-top: 0;
+}
+
+.main li a {
+  text-decoration: underline;
+}
+
+#home a {
+  text-decoration: underline;
+}
+
+#home p,
+#home li {
+  font-size: 24px;
+}
+
+#home h1 {
+  margin-bottom: 20px;
+}
+
+#home h2 {
+  margin-top: 70px;
+  margin-bottom: 10px;
+}

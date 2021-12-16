@@ -1,50 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CS 355 Home Page</title>
-    <link rel="stylesheet" href="dashboard.css" />
+    <title>CSCI 355 Home</title>
+    <link rel="stylesheet" href="dashboard/dashboard.css" />
   </head>
   <body>
-    <div class="whole">
-      <!-- <a href="#">
-        <svg width="30" height="27">
-          <rect id="ham" x="0" y="0" rx="2" ry="2" width="30" height="3"/>
-          <rect id="bur" x="0" y="45%" rx="2" ry="2" width="30" height="3"/>
-          <rect id="gur" x="0" y="89%" rx="2" ry="2" width="30" height="3"/>
-          <rect id="ham" y="0"/>
-          <rect id="bur" y="12"/>
-          <rect id="ger" y="24"/>
-          <rect id="ham" />
-          <rect id="bur" />
-          <rect id="ger" />
-        </svg>
-      </a> -->
-      <ul>
-        <li id="home">Home</li>
-        <a href="resume/resume.html"><li id="resume">Resume</li></a>
-        <a href="https://chalkboard.brpasiliao.repl.co/"
-          ><li id="resume">Chalkboard</li></a
-        >
-        <a href="weather/weather.html"><li id="weather">Weather App</li></a>
-        <a href="https://brpasiliao-npm.herokuapp.com/">
-          <li>FreeCodeCamp Npm</li>
-        </a>
-        <a href="https://boilerplate-express.brpasiliao.repl.co/">
-          <li>FreeCodeCamp Express</li>
-        </a>
-        <a href="https://boilerplate-mongomongoose.brpasiliao.repl.co">
-          <li>FreeCodeCamp MongoDB & Mongoose</li>
-        </a>
-        <a href="https://building-website-nodejs-express.brpasiliao.repl.co">
-          <li>LL Node.js & Express</li>
-        </a>
-        <!-- header
-        https://stackoverflow.com/questions/11845471/how-can-i-get-the-browser-language-in-node-js-express-js
-        https://gist.github.com/ninjascribble/5119003 -->
-        <!-- shorturl
-        https://nodejs.org/api/dns.html#dnslookuphostname-options-callback -->
-      </ul>
-      <h1>This is Bian&nbsp;Pasiliao's home page for CS&nbsp;355</h1>
+    <nav>
+      <a class="active" href="index.html">Home</li>
+      <a href="dashboard/resume.html">Resume</a>
+      <a href="dashboard/chalkboard.html">Chalkboard</a>
+      <a href="dashboard/weather.html">Weather App</a>
+      <a href="dashboard/lin.html">LinkedIn Learning</a>
+      <a href="dashboard/fcc.html">FreeCodeCamp</a>
+    </nav>
+    <div class="margin">
+      <section id="home" class="main">
+        <h1>This is<br>Bian Pasiliao's home page for CS&nbsp;355</h1>
+        <p><a href="https://github.com/brpasiliao/brpasiliao.github.io" target="_blank">Link to Dashboard GitHub Repo</a></p>
+        <h2>Technologies Featured</h2>
+        <ul>
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>Node.js/Express.js</li>
+          <li>MongoDB/Mongoose</li>
+        </ul>
+      </section>
     </div>
   </body>
 </html>
