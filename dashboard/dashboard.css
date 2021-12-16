@@ -17,6 +17,7 @@ body {
 h1 {
   font-size: 4em;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -70,6 +71,10 @@ nav a:active {
 .main {
   padding: 100px 100px 100px 100px;
   max-width: 700px;
+}
+
+.main > p {
+  font-size: 24px;
 }
 
 .card {
@@ -133,6 +138,10 @@ nav a:active {
 }
 
 .main li a {
+  text-decoration: underline;
+}
+
+.main p a {
   text-decoration: underline;
 }
 
