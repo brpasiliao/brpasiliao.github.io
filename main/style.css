@@ -1,0 +1,195 @@
+@font-face {
+  font-family: "Instruction";
+  src: url(fonts/Instruction.otf);
+}
+@font-face {
+  font-family: "Calling Code";
+  src: url(fonts/CallingCode-Regular.ttf);
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "Retro Gaming";
+  src: url(fonts/Retro\ Gaming.ttf);
+}
+@font-face {
+  font-family: "Butter";
+  src: url(fonts/Butter-Regular.ttf);
+}
+
+html {
+  --yellow: #f9cc71;
+  --whitish: #f4ebde;
+  --blackish: #313447;
+  --pink: #f69b8c;
+  --green: #b3df72;
+}
+
+body {
+  margin: 0;
+  color: var(--blackish);
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  filter: invert(15%) sepia(8%) saturate(2474%) hue-rotate(194deg)
+    brightness(97%) contrast(84%);
+}
+
+h1 {
+  font-size: 72px;
+  font-family: "Instruction";
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 0 0 1em 0;
+}
+
+p {
+  font-size: 32px;
+  font-family: "Roboto";
+}
+
+a {
+  text-decoration: none;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50vh 50vh;
+  transition: all 0.3s;
+}
+
+/* #grid:hover {
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 50vh 50vh;
+} */
+
+.grid-item {
+  padding: 50px;
+  /* transition: all 0.3s; */
+}
+
+/* name */
+
+#name {
+  background-color: var(--yellow);
+}
+
+#links {
+  display: flex;
+  justify-content: center;
+}
+
+#links a {
+  padding: 0 20px;
+}
+
+/* game */
+
+#game {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background-color: var(--whitish);
+  font-family: "Retro Gaming";
+}
+
+#game h2 {
+  margin-bottom: 1.5em;
+}
+
+#game img {
+  filter: none;
+}
+
+#game-col {
+  flex-basis: auto;
+  margin-right: 70px;
+}
+
+#pad {
+  width: 120px;
+  height: 120px;
+  margin-left: 30px;
+}
+
+#gif {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border: var(--blackish) 10px solid;
+}
+
+.sensor {
+  position: absolute;
+  /* border: black 1px solid; */
+}
+
+#up {
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 25%;
+}
+
+#right {
+  width: 25%;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+#down {
+  width: 50%;
+  height: 50%;
+  bottom: 0;
+  left: 25%;
+}
+
+#left {
+  width: 25%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* software */
+
+#software {
+  background-color: var(--blackish);
+  color: var(--whitish);
+  font-family: "Calling Code";
+}
+
+#software p {
+  margin: 0;
+  font-family: inherit;
+}
+
+.class {
+  color: var(--yellow);
+}
+
+.function {
+  color: var(--pink);
+}
+
+.string {
+  color: var(--green);
+}
+
+/* art */
+
+#art {
+  background-color: var(--pink);
+  font-family: "Butter";
+}

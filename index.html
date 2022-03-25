@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home - Bian Pasiliao</title>
-    <link rel="stylesheet" href="dashboard/dashboard.css" />
+    <title>Bian Pasiliao</title>
+    <link rel="stylesheet" href="main/style.css" />
+    <script src="main/script.js"></script>
   </head>
   <body>
-    <nav>
-      <a class="active" href="index.html">Home</li>
-      <a href="dashboard/about.html">About</a>
-      <a href="dashboard/projects.html">Projects</a>
-      <a href="dashboard/lin.html">LinkedIn Learning</a>
-      <a href="dashboard/fcc.html">FreeCodeCamp</a>
-    </nav>
-    <div class="margin">
-      <section id="home" class="main">
+    <div id="grid">
+      <div id="name" class="grid-item" onmouseover="expand(60, 40, 60, 40)">
         <h1>Bian Pasiliao</h1>
-        <p>Hello world, welcome to my dashboard!
-        </p>
-        <p><a href="https://github.com/brpasiliao" target="_blank">Link to GitHub</a></p>
-        <h2>Technologies Featured</h2>
-        <ul>
-          <li>HTML/CSS</li>
-          <li>JavaScript</li>
-          <li>Node.js/Express.js</li>
-          <li>MongoDB/Mongoose</li>
-        </ul>
-      </section>
+        <div id="links">
+          <a href="mailto:brpasiliao@gmail.com" target="_blank">
+            <img src="main/icons/email.png" />
+          </a>
+          <!-- <a href="https://linkedin.com/brpasiliao" target="_blank"> -->
+          <a href="" target="_blank"></a>
+            <img src="main/icons/linkedin.png" />
+          </a>
+          <a href="https://github.com/brpasiliao" target="_blank">
+            <img src="main/icons/github.webp" />
+          </a>
+        </div>
+      </div>
+
+      <div id="game" class="grid-item" onmouseover="expand(40, 60, 60, 40)" onmouseout="changeDefault()">
+        <div id="game-col">
+          <h2>GAME DEV</h2>
+          <img id="pad" src="main/sprites/pad.png" />
+        </div>
+        <img id="gif" src="main/sprites/still.png" />
+        <div id="up" class="sensor" onmouseover="change('up')"></div>
+        <div id="right" class="sensor" onmouseover="change('right')"></div>
+        <div id="down" class="sensor" onmouseover="change('down')"></div>
+        <div id="left" class="sensor" onmouseover="change('left')"></div>
+      </div>
+
+      <a id="software" class="grid-item" href="software/software.html" onmouseover="expand(60, 40, 40, 60)">
+        <h2>SOFTWARE ENGINEERING</h2>
+        <p><span class="class">System</span>.out.<span class="function">print</span>(<span class="string">"Hello world!"</span>);</p>
+        <p><span class="class">Debug</span>.<span class="function">Log</span>(<span class="string">"Hello world!"</span>);</p>
+        <p>console.<span class="function">log</span>(<span class="string">"Hello world!"</span>);</p>
+        <p><span class="function">print</span>(<span class="string">"Hello world!"</span>);</p>
+      </a>
+
+      <div id="art" class="grid-item" onmouseover="expand(40, 60, 40, 60)">
+        <h2>ARTWORKS</h2>
+      </div>
     </div>
   </body>
 </html>
