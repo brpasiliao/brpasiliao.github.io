@@ -37,3 +37,9 @@ function expand(c1, c2, r1, r2) {
   grid.style.gridTemplateColumns = c1 + "% " + c2 + "%";
   grid.style.gridTemplateRows = r1 + "vh " + r2 + "vh";
 }
+
+function shrink() {
+  var grid = document.getElementById("grid");
+  grid.style.gridTemplateColumns = "50% 50%";
+  grid.style.gridTemplateRows = "50vh 50vh";
+}

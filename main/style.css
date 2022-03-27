@@ -68,14 +68,13 @@ a {
   transition: all 0.3s;
 }
 
-/* #grid:hover {
-  grid-template-columns: 60% 40%;
-  grid-template-rows: 50vh 50vh;
-} */
-
 .grid-item {
   padding: 50px;
-  /* transition: all 0.3s; */
+  transition: background 0.3s;
+}
+
+.grid-item:hover {
+  filter: saturate(130%);
 }
 
 /* name */
