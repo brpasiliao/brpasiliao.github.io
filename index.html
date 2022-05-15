@@ -6,10 +6,8 @@
     <script src="main/script.js"></script>
   </head>
   <body>
-    <!-- <div id="grid" onmouseout="shrink()"> -->
-    <div class="row">
-      <!-- <div id="name" class="grid-item" onmouseover="expand(60, 40, 60, 40)"> -->
-      <div id="name" class="section">
+    <div id="grid" onmouseout="shrink()">
+      <div id="name" class="grid-item" onmouseover="expand(60, 40, 60, 40)">
         <h1>Bian Pasiliao</h1>
         <div id="links">
           <a href="mailto:brpasiliao@gmail.com" target="_blank">
@@ -24,25 +22,19 @@
         </div>
       </div>
 
-      <!-- <div id="game" class="grid-item" onmouseover="expand(40, 60, 60, 40)" onmouseout="changeDefault()"> -->
-      <div id="game" class="section" onmouseout="changeDefault()">
+      <div id="game" class="grid-item" onmouseover="expand(40, 60, 60, 40)" onmouseout="changeDefault()">
         <div id="game-col">
           <h2>GAME DEV</h2>
           <img id="pad" src="main/sprites/pad.png" />
         </div>
-        <div id="gif">
-          <img src="main/sprites/still.png" />
-        </div>
+        <img id="gif" src="main/sprites/still.png" />
         <div id="up" class="sensor" onmouseover="change('up')"></div>
         <div id="right" class="sensor" onmouseover="change('right')"></div>
         <div id="down" class="sensor" onmouseover="change('down')"></div>
         <div id="left" class="sensor" onmouseover="change('left')"></div>
       </div>
-    </div>
 
-    <div class="row">
-      <!-- <a id="software" class="grid-item" href="software/software.html" onmouseover="expand(60, 40, 40, 60)"> -->
-      <a id="software" class="section" href="software/software.html">
+      <a id="software" class="grid-item" href="software/software.html" onmouseover="expand(60, 40, 40, 60)">
         <h2>SOFTWARE ENGINEERING</h2>
         <p><span class="class">System</span>.out.<span class="function">print</span>(<span class="string">"Hello world!"</span>);</p>
         <p><span class="class">Debug</span>.<span class="function">Log</span>(<span class="string">"Hello world!"</span>);</p>
@@ -50,9 +42,8 @@
         <p><span class="function">print</span>(<span class="string">"Hello world!"</span>);</p>
       </a>
 
-      <!-- <div id="art" class="grid-item" onmouseover="expand(40, 60, 40, 60)"> -->
-      <div id="art" class="section">
-        <h2>ART AND DESIGN</h2>
+      <div id="art" class="grid-item" onmouseover="expand(40, 60, 40, 60)">
+        <h2>ARTWORKS</h2>
       </div>
     </div>
   </body>
