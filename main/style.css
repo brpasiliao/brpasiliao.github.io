@@ -25,6 +25,8 @@ html {
   --blackish: #313447;
   --pink: #f69b8c;
   --green: #b3df72;
+
+  margin: 0;
 }
 
 body {
@@ -61,20 +63,31 @@ a {
   text-decoration: none;
 }
 
-#grid {
+/* #grid {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50vh 50vh;
   transition: all 0.3s;
-}
+} */
 
-.grid-item {
+/* .grid-item {
   padding: 50px;
   transition: background 0.3s;
 }
 
 .grid-item:hover {
   filter: saturate(130%);
+} */
+
+.row {
+  display: flex;
+}
+
+.section {
+  height: 37.41vh;
+  flex-basis: 50%;
+  padding: 50px;
+  overflow: hidden;
 }
 
 /* name */
@@ -111,7 +124,7 @@ a {
 }
 
 #game-col {
-  flex-basis: auto;
+  flex: 0 0 190px;
   margin-right: 70px;
 }
 
@@ -122,10 +135,28 @@ a {
 }
 
 #gif {
-  width: auto;
-  height: auto;
-  margin: 0 auto;
+  flex: 1 1 100%;
+  position: relative;
+  width: 50%; /* The size you want */
   border: var(--blackish) 10px solid;
+}
+
+#gif:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
+
+#gif img {
+  position: absolute; /* Take your picture out of the flow */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; /* Make the picture taking the size of it's parent */
+  width: 100%; /* This if for the object-fit */
+  height: 100%; /* This if for the object-fit */
+  object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+  object-position: center;
 }
 
 .sensor {
