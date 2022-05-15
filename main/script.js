@@ -1,7 +1,7 @@
 function change(direction) {
   var pad = document.getElementById("pad");
   pad.src = "main/sprites/pad_" + direction + ".png";
-  var gif = document.getElementById("gif");
+  var gif = document.getElementById("gif").firstElementChild;
   gif.src = "main/sprites/walking_" + direction + ".gif";
   return false;
 }
@@ -9,7 +9,7 @@ function change(direction) {
 function changeDefault() {
   var pad = document.getElementById("pad");
   pad.src = "main/sprites/pad.png";
-  var gif = document.getElementById("gif");
+  var gif = document.getElementById("gif").firstElementChild;
   gif.src = "main/sprites/still.png";
   return false;
 }
