@@ -7,7 +7,8 @@ html {
   --yellow: #f9cc71;
   --whitish: #f4ebde;
   --blackish-alpha1: #31344733;
-  --blackish-alpha2: #31344711;
+  --blackish-alpha2: #31344755;
+  --blackish-alpha3: #313447AA;
   --blackish: #313447;
   --pink: #f69b8c;
   --green: #b3df72;
@@ -56,6 +57,10 @@ a:visited {
   color: var(--pink)
 }
 
+#back:active {
+  background: var(--blackish-alpha2);
+}
+
 #game {
   margin: 0 auto;
   padding: 100px;
@@ -84,20 +89,22 @@ a:visited {
 .pic {
   box-sizing: border-box;
   width: 100%;
-  border: 2px solid var(--blackish);
-  border-radius: 10px;
   padding: 2.25% 4%;
-  transition: padding 0.3s ease-in-out;
+  border: 4px solid var(--blackish);
+  box-shadow: -8px 8px var(--blackish-alpha3);
+  transition: padding 0.3s ease-in-out, background 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
 .pic:hover {
   padding: 0;
+  background: var(--yellow);
+  border: 4px solid var(--yellow);
 }
 
 .pic img {
   display: block;
   width: 100%;
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 
 .descriptions {

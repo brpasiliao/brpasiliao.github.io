@@ -43,7 +43,7 @@ h1 {
   font-size: 72px;
   font-family: "Instruction";
   text-align: center;
-  margin: 0.5em 0;
+  margin: 0 0 0.5em 0;
 }
 
 h2 {
@@ -83,6 +83,9 @@ a {
 
 #name {
   background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #links {
@@ -97,7 +100,6 @@ a {
 /* game */
 
 #game {
-  display: flex;
   justify-content: space-between;
   position: relative;
   background-color: var(--whitish);
@@ -105,23 +107,24 @@ a {
 }
 
 #game h2 {
-  margin-bottom: 1.5em;
-  width: 320px;
+  /* margin-bottom: 1.5em; */
+  /* width: 320px; */
 }
 
 #game img {
   filter: none;
 }
 
-#game-col {
-  flex-basis: auto;
-  margin-right: 70px;
+#game-row {
+  display: flex;
+  height: calc(100% - 67px);
 }
 
 #pad {
+  /* flex-basis: 30%; */
   width: 120px;
   height: 120px;
-  margin: 0 auto;
+  margin: auto 30px auto 20px;
   display: block;
 }
 
@@ -129,26 +132,25 @@ a {
   width: 60%;
   height: auto;
   margin: 0 auto;
-  border: var(--blackish) 10px solid;
+  border: var(--blackish) 8px solid;
   position: relative;
-  /* width: 37%; The size you want */
 }
 
 #gif:after {
   content: "";
   display: block;
-  padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+  padding-bottom: 100%;
 }
 
 #gif img {
-  position: absolute; /* Take your picture out of the flow */
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0; /* Make the picture taking the size of it's parent */
-  width: 100%; /* This if for the object-fit */
-  height: 100%; /* This if for the object-fit */
-  object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -215,4 +217,12 @@ a {
 #art {
   background-color: var(--pink);
   font-family: "Butter";
+}
+
+.special {
+  font-family: "Brush Script MT", cursive;
+  /* font-family: "Instruction"; */
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-right: 5px;
 }
