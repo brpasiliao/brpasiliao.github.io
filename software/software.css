@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Calling Code";
+  src: url(../main/fonts/CallingCode-Regular.ttf);
+}
+
 html {
   --yellow: #f9cc71;
   --whitish: #f4ebde;
@@ -11,7 +16,7 @@ html {
 body {
   margin: 0;
   color: var(--whitish);
-  font-family: "Andale Mono", "Lucida Console", monospace;
+  font-family: "Calling Code";
   background: var(--blackish);
   font-size: 16px;
 }
@@ -56,19 +61,23 @@ a:visited {
   max-width: 800px;
 }
 
-#github {
+.link {
   font-size: 24px;
   padding-left: 30px;
   text-decoration: underline;
   transition: color 0.3s;
 }
 
-#github:hover {
+.link:hover {
   color: var(--green);
 }
 
-#github:active {
+.link:active {
   color: #b3df7288;
+}
+
+.project {
+  margin-top: 70px;
 }
 
 .card {
@@ -78,7 +87,6 @@ a:visited {
   width: 100%;
   border: 2px solid var(--whitish);
   border-radius: 10px;
-  margin-top: 70px;
 }
 
 .card h2 {

@@ -11,8 +11,8 @@
   src: url(fonts/Roboto-Regular.ttf);
 }
 @font-face {
-  font-family: "Retro Gaming";
-  src: url(fonts/Retro\ Gaming.ttf);
+  font-family: "GameOverCre";
+  src: url(fonts/gameovercre1.ttf);
 }
 @font-face {
   font-family: "Butter";
@@ -59,6 +59,7 @@ p {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .row {
@@ -100,12 +101,12 @@ a {
   justify-content: space-between;
   position: relative;
   background-color: var(--whitish);
-  font-family: "Retro Gaming";
+  font-family: "GameOverCre";
 }
 
 #game h2 {
   margin-bottom: 1.5em;
-  width: 190px;
+  width: 320px;
 }
 
 #game img {
@@ -120,7 +121,8 @@ a {
 #pad {
   width: 120px;
   height: 120px;
-  margin-left: 30px;
+  margin: 0 auto;
+  display: block;
 }
 
 #gif {

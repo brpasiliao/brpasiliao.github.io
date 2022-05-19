@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "GameOverCre";
+  src: url(../main/fonts/gameovercre1.ttf);
+}
+
+html {
+  --yellow: #f9cc71;
+  --whitish: #f4ebde;
+  --blackish-alpha1: #31344733;
+  --blackish-alpha2: #31344711;
+  --blackish: #313447;
+  --pink: #f69b8c;
+  --green: #b3df72;
+}
+
+body {
+  margin: 0;
+  color: var(--blackish);
+  font-family: "GameOverCre";
+  background: var(--whitish);
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 4.4em;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+#back {
+  position: fixed;
+  top: 100px;
+  left: 35px;
+  padding: 10px 5px 0 0;
+  font-size: 4em;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+#back:hover {
+  background: var(--blackish-alpha1);
+  color: var(--pink)
+}
+
+#game {
+  margin: 0 auto;
+  padding: 100px;
+  max-width: 800px;
+}
+
+.link {
+  font-size: 24px;
+  padding-left: 30px;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: var(--green);
+}
+
+.link:active {
+  color: #b3df7288;
+}
+
+.project {
+  margin-top: 70px;
+}
+
+.pic {
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid var(--blackish);
+  border-radius: 10px;
+  padding: 2.25% 4%;
+  transition: padding 0.3s ease-in-out;
+}
+
+.pic:hover {
+  padding: 0;
+}
+
+.pic img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.descriptions {
+  padding: 0 30px;
+  margin-bottom: 0;
+}
+
+.special {
+  font-family: monospace;
+}
