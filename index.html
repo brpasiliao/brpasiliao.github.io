@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="main/style.css" />
     <script src="main/script.js"></script>
   </head>
-  <body>
-    <div id="grid" onmouseout="shrink()">
-      <div id="name" class="grid-item" onmouseover="expand(60, 40, 60, 40)">
+  <body onmouseout="shrink()">
+    <div id="row1" class="row" onmouseover="expandRow(1, 2)">
+      <div id="name" class="item col1" onmouseover="expandCol(1, 2)">
         <h1>Bian Pasiliao</h1>
         <div id="links">
           <a href="mailto:brpasiliao@gmail.com" target="_blank">
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div id="game" class="grid-item" onmouseover="expand(40, 60, 60, 40)" onmouseout="changeDefault()">
+      <div id="game" class="item col2" onmouseover="expandCol(2, 1)" onmouseout="changeDefault()">
         <div id="game-col">
           <h2>GAME DEV</h2>
           <img id="pad" src="main/sprites/pad.png" />
@@ -30,21 +30,23 @@
         <div id="gif">
           <img src="main/sprites/still.png" />
         </div>
-        <div id="up" class="sensor" onmouseover="change('up')"></div>
+        <!-- <div id="up" class="sensor" onmouseover="change('up')"></div>
         <div id="right" class="sensor" onmouseover="change('right')"></div>
         <div id="down" class="sensor" onmouseover="change('down')"></div>
-        <div id="left" class="sensor" onmouseover="change('left')"></div>
+        <div id="left" class="sensor" onmouseover="change('left')"></div> -->
       </div>
+    </div>
 
-      <a id="software" class="grid-item" href="software/software.html" onmouseover="expand(60, 40, 40, 60)">
+    <div id="row2" class="row" onmouseover="expandRow(2, 1)">
+      <a id="software" class="item col1" href="software/software.html"  onmouseover="expandCol(1, 2)">
         <h2>SOFTWARE ENGINEERING</h2>
         <p><span class="class">System</span>.out.<span class="function">print</span>(<span class="string">"Hello world!"</span>);</p>
-        <!-- <p><span class="class">Debug</span>.<span class="function">Log</span>(<span class="string">"Hello world!"</span>);</p>
+        <p><span class="class">Debug</span>.<span class="function">Log</span>(<span class="string">"Hello world!"</span>);</p>
         <p>console.<span class="function">log</span>(<span class="string">"Hello world!"</span>);</p>
-        <p><span class="function">print</span>(<span class="string">"Hello world!"</span>);</p> -->
+        <p><span class="function">print</span>(<span class="string">"Hello world!"</span>);</p>
       </a>
 
-      <div id="art" class="grid-item" onmouseover="expand(40, 60, 40, 60)">
+      <div id="art" class="item col2" onmouseover="expandCol(2, 1)">
         <h2>ARTWORKS</h2>
       </div>
     </div>

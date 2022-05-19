@@ -14,32 +14,31 @@ function changeDefault() {
   return false;
 }
 
-// function gridHover() {
-//   var gridItems = document.getElementsByClassName("grid-item");
-//   for (let i = 0; i < gridItems.length; i++) {
-//     console.log("gsg");
-//     gridItems[i].addEventListener("mouseover", function() {
-//       var grid = document.getElementById("grid");
+function expandRow(r1, r2) {
+  var row1 = document.getElementById("row" + r1);
+  var row2 = document.getElementById("row" + r2);
+  row1.style.height = "60vh";
+  row2.style.height = "40vh";
 
-//       if (i%2 == 0) {
-//         grid.style.gridTemplateColumns = "60% 40%";
-//         grid.style.gridTemplateRows = "60vh 40vh";
-//       } else {
-//         grid.style.gridTemplateColumns = "40% 60%";
-//         grid.style.gridTemplateRows = "40vh 60vh";
-//       }
-//     });
-//   }
-// }
+  // var grid = document.getElementById("grid");
+  // grid.style.gridTemplateColumns = c1 + "% " + c2 + "%";
+  // grid.style.gridTemplateRows = r1 + "vh " + r2 + "vh";
+}
 
-function expand(c1, c2, r1, r2) {
-  var grid = document.getElementById("grid");
-  grid.style.gridTemplateColumns = c1 + "% " + c2 + "%";
-  grid.style.gridTemplateRows = r1 + "vh " + r2 + "vh";
+function expandCol(c1, c2) {
+  var col1 = document.getElementsByClassName("col" + c1);
+  var col2 = document.getElementsByClassName("col" + c2);
+  for (var i = 0; i < col1.length; i++) {col1[i].style.width = "60%";}
+  for (var i = 0; i < col2.length; i++) {col2[i].style.width = "40%";}
 }
 
 function shrink() {
-  var grid = document.getElementById("grid");
-  grid.style.gridTemplateColumns = "50% 50%";
-  grid.style.gridTemplateRows = "50vh 50vh";
+  var row1 = document.getElementById("row1");
+  var row2 = document.getElementById("row2");
+  var col1 = document.getElementsByClassName("col1");
+  var col2 = document.getElementsByClassName("col2");
+  row1.style.height = "50vh";
+  row2.style.height = "50vh";
+  for (var i = 0; i < col1.length; i++) {col1[i].style.width = "50%";}
+  for (var i = 0; i < col2.length; i++) {col2[i].style.width = "50%";}
 }
