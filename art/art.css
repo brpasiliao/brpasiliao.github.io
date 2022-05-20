@@ -126,26 +126,28 @@ ul li:last-child {
 
 .images img {
   max-height: 420px;
-  padding: 15px 0 15px 15px;
+  /* padding: 15px 0 15px 15px; */
+  padding: 15px;
   background-color: var(--whitish);
   cursor: pointer;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
-.images img:last-child {
-  padding-right: 15px;
+.images img:hover {
+  max-height: 450px;
+  padding: 0;
 }
-
-/* .image {
-  width: 100%;
-  padding: 15px 0 15px 15px;
-  background-color: var(--whitish);
-} */
 
 .image img {
   box-sizing: border-box;
   width: 100%;
   padding: 15px;
-  background-color: var(--whitish);
+  background: var(--whitish);
+  transition: padding 0.3s ease-in-out;
+}
+
+.image img:hover {
+  padding: 6.5625px 0px;
 }
 
 .descriptions {
