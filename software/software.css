@@ -25,6 +25,7 @@ h1 {
   font-size: 4em;
   margin-top: 0;
   margin-bottom: 0;
+  text-align: center;
 }
 
 h2 {
@@ -41,6 +42,12 @@ a:visited {
   color: inherit;
 }
 
+#software {
+  margin: 0 auto;
+  padding: 100px;
+  max-width: 800px;
+}
+
 #back {
   position: fixed;
   top: 100px;
@@ -55,15 +62,15 @@ a:visited {
   color: var(--pink)
 }
 
-#software {
-  margin: 0 auto;
-  padding: 100px;
-  max-width: 800px;
+ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
 }
 
 .link {
   font-size: 24px;
-  padding-left: 30px;
   text-decoration: underline;
   transition: color 0.3s;
 }

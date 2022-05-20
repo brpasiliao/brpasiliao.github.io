@@ -15,8 +15,12 @@
   src: url(fonts/gameovercre1.ttf);
 }
 @font-face {
-  font-family: "Butter";
-  src: url(fonts/Butter-Regular.ttf);
+  font-family: "Sprinkle";
+  src: url(fonts/Sprinkle-Regular.ttf);
+}
+@font-face {
+  font-family: "Baby Doll";
+  src: url(fonts/Baby\ Doll.ttf);
 }
 
 html {
@@ -221,12 +225,9 @@ a {
 
 #art {
   background-color: var(--pink);
-  font-family: "Butter";
+  font-family: "Sprinkle";
 }
 
 .special {
-  font-family: "Brush Script MT", cursive;
-  font-size: 1.1em;
-  font-weight: bold;
-  padding-right: 5px;
+  font-family: "Baby Doll";
 }

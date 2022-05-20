@@ -26,6 +26,7 @@ h1 {
   font-size: 4.4em;
   margin-top: 10px;
   margin-bottom: 0;
+  text-align: center;
 }
 
 h2 {
@@ -40,6 +41,12 @@ a {
 
 a:visited {
   color: inherit;
+}
+
+#game {
+  margin: 0 auto;
+  padding: 100px;
+  max-width: 800px;
 }
 
 #back {
@@ -61,15 +68,15 @@ a:visited {
   background: var(--blackish-alpha2);
 }
 
-#game {
-  margin: 0 auto;
-  padding: 100px;
-  max-width: 800px;
+ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
 }
 
 .link {
   font-size: 24px;
-  padding-left: 30px;
   text-decoration: underline;
   transition: color 0.3s;
 }
@@ -109,9 +116,31 @@ a:visited {
 
 .descriptions {
   padding: 0 30px;
+  margin-top: 16px;
   margin-bottom: 0;
 }
 
 .special {
   font-family: monospace;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #00000044; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00000066; 
 }
