@@ -1,13 +1,18 @@
 @font-face {
-  font-family: "Calling Code";
-  src: url(../main/fonts/CallingCode-Regular.ttf);
+  font-family: "Sprinkle";
+  src: url(../main/fonts/Sprinkle-Regular.ttf);
+}
+@font-face {
+  font-family: "Baby Doll";
+  src: url(../main/fonts/Baby\ Doll.ttf);
 }
 
 html {
   --yellow: #f9cc71;
   --whitish: #f4ebde;
-  --whitish-alpha1: #f4ebde33;
-  --whitish-alpha2: #f4ebde11;
+  --blackish-alpha1: #31344733;
+  --blackish-alpha2: #31344755;
+  --blackish-alpha3: #31344777;
   --blackish: #313447;
   --pink: #f69b8c;
   --green: #b3df72;
@@ -15,15 +20,15 @@ html {
 
 body {
   margin: 0;
-  color: var(--whitish);
-  font-family: "Calling Code";
-  background: var(--blackish);
-  font-size: 16px;
+  color: var(--blackish);
+  font-family: "Sprinkle";
+  background: var(--pink);
+  font-size: 18px;
 }
 
 h1 {
   font-size: 4em;
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 0;
   text-align: center;
 }
@@ -31,6 +36,9 @@ h1 {
 h2 {
   font-size: 2.5em;
   margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 30px;
+  text-align: center;
 }
 
 a {
@@ -42,7 +50,7 @@ a:visited {
   color: inherit;
 }
 
-#software {
+#art {
   margin: 0 auto;
   padding: 100px;
   max-width: 800px;
@@ -52,14 +60,24 @@ a:visited {
   position: fixed;
   top: 100px;
   left: 35px;
+  padding-top: 15px;
+  font-family: "Baby Doll";
   font-size: 4em;
   font-weight: bold;
   transition: background 0.3s, color 0.3s;
 }
 
 #back:hover {
-  background: var(--whitish-alpha1);
-  color: var(--pink)
+  background: var(--blackish-alpha1);
+  color: var(--yellow);
+}
+
+#back:active {
+  background: var(--blackish-alpha2);
+}
+
+#amp {
+  font-family: "Baby Doll";
 }
 
 ul {
@@ -87,66 +105,33 @@ ul {
   margin-top: 70px;
 }
 
-.card {
-  box-sizing: border-box;
+.images {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  border: 2px solid var(--whitish);
-  border-radius: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: 4px;
 }
 
-.card h2 {
-  margin: 0;
+.images img {
+  max-height: 420px;
+  padding: 15px 0 15px 15px;
+  background-color: var(--whitish);
 }
 
-.name {
-  flex-basis: 100%;
-  padding: 30px 0 30px 30px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.name h2 {
-  border-right: 2px solid var(--whitish);
-  padding-right: 30px;
-}
-
-.name:hover {
-  background: var(--whitish-alpha1);
-  color: var(--yellow);
-}
-
-.gh {
-  flex-basis: auto;
-  display: flex;
-  text-align: right;
-  height: inherit;
-  padding: 30px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  transition: background 0.3s;
-}
-
-.gh h2 {
-  margin: auto 0;
-}
-
-.gh:hover {
-  background: var(--whitish-alpha1);
-  color: var(--green);
-}
-
-.name:active, 
-.gh:active,
-#back:active {
-  background: var(--whitish-alpha2);
+.images img:last-child {
+  padding-right: 15px;
 }
 
 .descriptions {
   padding: 0 30px;
+  margin-top: 16px;
   margin-bottom: 0;
+  text-align: center;
+}
+
+.special {
+  font-family: "Baby Doll";
+  font-size: 1.5em;
 }
 
 /* scrollbar */
