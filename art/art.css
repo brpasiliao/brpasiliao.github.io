@@ -41,6 +41,10 @@ h2 {
   text-align: center;
 }
 
+.lift {
+  margin-bottom: 8px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -84,7 +88,15 @@ ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
-  padding: 0;
+}
+
+ul li {
+  padding: 0 25px;
+  border-right: var(--blackish) solid 3px;
+}
+
+ul li:last-child {
+  border: none;
 }
 
 .link {
@@ -116,10 +128,24 @@ ul {
   max-height: 420px;
   padding: 15px 0 15px 15px;
   background-color: var(--whitish);
+  cursor: pointer;
 }
 
 .images img:last-child {
   padding-right: 15px;
+}
+
+/* .image {
+  width: 100%;
+  padding: 15px 0 15px 15px;
+  background-color: var(--whitish);
+} */
+
+.image img {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--whitish);
 }
 
 .descriptions {
@@ -132,6 +158,29 @@ ul {
 .special {
   font-family: "Baby Doll";
   font-size: 1.5em;
+}
+
+/* overlay */
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #00000066;
+  cursor: pointer;
+}
+
+#overlay img {
+  position: fixed;
+  max-height: 80%;
+  max-width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* scrollbar */
@@ -153,4 +202,8 @@ ul {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #00000066; 
+}
+
+.scroll-toggle::-webkit-scrollbar-track {
+  background: #00000066;
 }

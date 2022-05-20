@@ -75,6 +75,15 @@ ul {
   padding: 0;
 }
 
+ul li {
+  padding: 0 25px;
+  border-right: var(--blackish) solid 3px;
+}
+
+ul li:last-child {
+  border: none;
+}
+
 .link {
   font-size: 24px;
   text-decoration: underline;

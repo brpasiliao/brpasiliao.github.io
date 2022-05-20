@@ -3,26 +3,41 @@
   <head>
     <title>Game Development - Bian Pasiliao</title>
     <link rel="stylesheet" href="art.css" />
+    <script src="../main/script.js"></script>
   </head>
   <body>
 		<div id="art">
       <a id="back" href="../index.html"><</a>
       <h1>ART <span id="amp">&</span> DESIGN PORTFOLIO</h1>
       <ul>
-        <li><a class="link" href="#">itch.io</a></li>
+        <li><a class="link" href="https://www.behance.net/bianpasiliao">Behance</a></li>
+        <li><a class="link" href="#">Instagram</a></li>
       </ul>
 
       <div class="project">
         <h2><span class="special">3</span>D Artworks</h2>
         <div class="images">
-          <img src="../main/images/art/mycelium-buds.jpg" alt="personified mushrooms sleeping under a tree">
-          <img src="../main/images/art/darumaka.jpg" alt="a regular darumaka and a galarian darumaka">
-          <img src="../main/images/art/shelf.jpg" alt="a shelf with books, bottles, and trinkets">
-          <img src="../main/images/art/vending-machine.jpg" alt="a vending machine selling potted plants">
+          <img src="../main/images/art/mycelium-buds.jpg" alt="personified mushrooms sleeping under a tree" onclick="showOverlay(this)">
+          <img src="../main/images/art/darumaka.jpg" alt="a regular darumaka and a galarian darumaka" onclick="showOverlay(this)">
+          <img src="../main/images/art/shelf.jpg" alt="a shelf with books, bottles, and trinkets" onclick="showOverlay(this)">
+          <img src="../main/images/art/vending-machine.jpg" alt="a vending machine selling potted plants" onclick="showOverlay(this)">
         </div>
         <p class="descriptions">
           All created using Cinema<span class="special">4</span>D.
         </p>
+      </div>
+
+      <div class="project">
+        <h2 class="lift">App Design</h2>
+        <a class="image" href="https://www.figma.com/proto/NeTrgK18j7U7LqBZLCm62u/Final-Case-Study?node-id=46%3A541&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=46%3A541" target="_blank">
+          <img src="../main/images/art/garner.jpg" alt="title slide of presentation for Garner app">
+        </a>
+        <p class="descriptions">
+          Design created using Figma
+        </p>
+      </div>
+
+      <div id="overlay" onclick="hideOverlay()">
       </div>
 
 		</div>

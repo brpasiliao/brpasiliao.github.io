@@ -69,3 +69,23 @@ function addTab(element) {
   }
   element.innerHTML = newHtml;
 }
+
+function showOverlay(element) {
+  const pic = document.createElement("img");
+  pic.src = element.src;
+  pic.alt = element.alt;
+
+  var ol = document.getElementById("overlay");
+  ol.appendChild(pic);
+  ol.style.display = "block";
+
+  document.body.classList.add("scroll-toggle");
+}
+
+function hideOverlay() {
+  var ol = document.getElementById("overlay");
+  ol.style.display = "none";
+  ol.removeChild(ol.firstElementChild);
+
+  document.body.classList.remove("scroll-toggle");
+}
