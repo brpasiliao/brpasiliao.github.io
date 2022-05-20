@@ -19,10 +19,6 @@ function expandRow(r1, r2) {
   var row2 = document.getElementById("row" + r2);
   row1.style.height = "60vh";
   row2.style.height = "40vh";
-
-  // var grid = document.getElementById("grid");
-  // grid.style.gridTemplateColumns = c1 + "% " + c2 + "%";
-  // grid.style.gridTemplateRows = r1 + "vh " + r2 + "vh";
 }
 
 function expandCol(c1, c2) {
@@ -41,4 +37,35 @@ function shrink() {
   row2.style.height = "50vh";
   for (var i = 0; i < col1.length; i++) {col1[i].style.width = "50%";}
   for (var i = 0; i < col2.length; i++) {col2[i].style.width = "50%";}
+}
+
+function adjustContent() {
+  var codes = document.getElementById("code").children;
+  var software = document.getElementById("software");
+
+  if (!isOverflown(software)) 
+    for (var i = 0; i < codes.length; i++)
+      codes[i].style.display = "block";
+
+  var l = codes.length - 1;
+  while (l >= 0 && isOverflown(software)) {
+    codes[l].style.display = "none";
+    l--;
+  }
+}
+
+function isOverflown(element) {
+  return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+}
+
+
+// needs fix
+function addTab(element) {
+  var wholeText = element.innerHTML;
+  var splitText = wholeText.split("\r\n");
+  var newHtml = null;
+  for (var i = 0; i < splitText.length; i++) {
+    newHtml += "\t" + splitText[i];
+  }
+  element.innerHTML = newHtml;
 }

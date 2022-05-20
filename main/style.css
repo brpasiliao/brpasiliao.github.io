@@ -23,6 +23,7 @@ html {
   --yellow: #f9cc71;
   --whitish: #f4ebde;
   --blackish: #313447;
+  --grey: #999999;
   --pink: #f69b8c;
   --green: #b3df72;
 }
@@ -212,6 +213,10 @@ a {
   color: var(--green);
 }
 
+.comment {
+  color: var(--grey);
+}
+
 /* art */
 
 #art {
@@ -221,7 +226,6 @@ a {
 
 .special {
   font-family: "Brush Script MT", cursive;
-  /* font-family: "Instruction"; */
   font-size: 1.1em;
   font-weight: bold;
   padding-right: 5px;

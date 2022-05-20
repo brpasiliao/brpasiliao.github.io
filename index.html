@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="main/style.css" />
     <script src="main/script.js"></script>
   </head>
-  <body onmouseout="shrink()">
+  <body onmouseout="shrink()" ontransitionend="adjustContent()">
     <div id="row1" class="row" onmouseover="expandRow(1, 2)">
       <div id="name" class="item col1" onmouseover="expandCol(1, 2)">
         <div id="name-content">
@@ -42,15 +42,20 @@
     <div id="row2" class="row" onmouseover="expandRow(2, 1)">
       <a id="software" class="item col1" href="software/software.html" onmouseover="expandCol(1, 2)">
         <h2>SOFTWARE ENGINEERING</h2>
-        <p><span class="class">System</span>.out.<span class="function">print</span>(<span class="string">"Hello world!"</span>);</p>
-        <p><span class="class">Debug</span>.<span class="function">Log</span>(<span class="string">"Hello world!"</span>);</p>
-        <p>console.<span class="function">log</span>(<span class="string">"Hello world!"</span>);</p>
-        <p><span class="function">print</span>(<span class="string">"Hello world!"</span>);</p>
+        <div id="code">
+          <p><span class="class">System</span>.out.<span class="function">print</span>&#8203;(<span class="string">"Hello world!"</span>);</p>
+          <p><span class="class">Console</span>.<span class="function">Write</span>&#8203;(<span class="string">"Hello world!"</span>);</p>
+          <p>console.<span class="function">log</span>&#8203;(<span class="string">"Hello world!"</span>);</p>
+          <!-- <br>
+          <p><span class="comment">Java says:</span> Hello world!</p>
+          <p><span class="comment">C# says:</span> Hello world!</p>
+          <p><span class="comment">JavaScript says:</span> Hello world!</p> -->
+        </div>
       </a>
 
-      <div id="art" class="item col2" onmouseover="expandCol(2, 1)">
+      <a id="art" class="item col2" href="art/art.html" onmouseover="expandCol(2, 1)">
         <h2>ART <span class="special">&</span> DESIGN</h2>
-      </div>
+      </a>
     </div>
   </body>
 </html>
