@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Sprinkle";
-  src: url(../main/fonts/Sprinkle-Regular.ttf);
+  src: url(../fonts/Sprinkle-Regular.ttf);
 }
 @font-face {
   font-family: "Baby Doll";
-  src: url(../main/fonts/Baby\ Doll.ttf);
+  src: url(../fonts/Baby\ Doll.ttf);
 }
 
 html {

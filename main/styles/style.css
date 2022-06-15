@@ -1,26 +1,26 @@
 @font-face {
   font-family: "Instruction";
-  src: url(fonts/Instruction.otf);
+  src: url(../fonts/Instruction.otf);
 }
 @font-face {
   font-family: "Calling Code";
-  src: url(fonts/CallingCode-Regular.ttf);
+  src: url(../fonts/CallingCode-Regular.ttf);
 }
 @font-face {
   font-family: "Roboto";
-  src: url(fonts/Roboto-Regular.ttf);
+  src: url(../fonts/Roboto-Regular.ttf);
 }
 @font-face {
   font-family: "GameOverCre";
-  src: url(fonts/gameovercre1.ttf);
+  src: url(../fonts/gameovercre1.ttf);
 }
 @font-face {
   font-family: "Sprinkle";
-  src: url(fonts/Sprinkle-Regular.ttf);
+  src: url(../fonts/Sprinkle-Regular.ttf);
 }
 @font-face {
   font-family: "Baby Doll";
-  src: url(fonts/Baby\ Doll.ttf);
+  src: url(../fonts/Baby\ Doll.ttf);
 }
 
 html {

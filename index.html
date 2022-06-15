@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <title>Bian Pasiliao</title>
-    <link rel="stylesheet" href="main/style.css" />
-    <script src="main/script.js"></script>
+    <link rel="stylesheet" href="main/styles/style.css" />
+    <script src="main/scripts/script.js" defer></script>
   </head>
-  <body onmouseout="shrink()" ontransitionend="adjustContent()">
-    <div id="row1" class="row" onmouseover="expandRow(1, 2)">
-      <div id="name" class="item col1" onmouseover="expandCol(1, 2)">
+  <body>
+    <div id="row1" class="row">
+      <div id="name" class="item col1">
         <div id="name-content">
           <h1>Bian Pasiliao</h1>
           <div id="links">
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <a id="game" class="item col2" href="game/game.html" onmouseover="expandCol(2, 1)" onmouseout="changeDefault()">
+      <a id="game" class="item col2" href="game.html">
         <h2>GAME DEVELOPMENT</h2>
         <div id="game-row">
           <img id="pad" src="main/sprites/pad.png" />
@@ -32,32 +32,26 @@
             <img src="main/sprites/still.png" />
           </div>
         </div>
-        <div id="up" class="sensor" onmouseover="change('up')"></div>
-        <div id="right" class="sensor" onmouseover="change('right')"></div>
-        <div id="down" class="sensor" onmouseover="change('down')"></div>
-        <div id="left" class="sensor" onmouseover="change('left')"></div>
+        <div id="up" class="sensor"></div>
+        <div id="right" class="sensor"></div>
+        <div id="down" class="sensor"></div>
+        <div id="left" class="sensor"></div>
       </a>
     </div>
 
-    <div id="row2" class="row" onmouseover="expandRow(2, 1)">
-      <a id="software" class="item col1" href="software/software.html" onmouseover="expandCol(1, 2);showConsole()" onmouseout="hideConsole()">
+    <div id="row2" class="row">
+      <a id="software" class="item col1" href="software.html">
         <h2>SOFTWARE ENGINEERING</h2>
         <div id="code">
-          <p onmouseover="typeAnimation('Java', 'Hello')">
-            <span class="class">System</span>.out.<span class="function">print</span>&#8203;(<span class="string">"Hello world!"</span>);
-          </p>
-          <p onmouseover="typeAnimation('C#', 'Hey')">
-            <span class="class">Console</span>.<span class="function">Write</span>&#8203;(<span class="string">"Hey world!"</span>);
-          </p>
-          <p onmouseover="typeAnimation('JavaScript', 'Hi')">
-            console.<span class="function">log</span>&#8203;(<span class="string">"Hi world!"</span>);
-          </p>
+          <p><span class="class">System</span>.out.<span class="function">print</span>&#8203;(<span class="string">"Hello world!"</span>);</p>
+          <p><span class="class">Console</span>.<span class="function">Write</span>&#8203;(<span class="string">"Hey world!"</span>);</p>
+          <p>console.<span class="function">log</span>&#8203;(<span class="string">"Hi world!"</span>);</p>
 
           <p id="console"><br><span id="typed"></span><span id="caret">|</span></p>
         </div>
       </a>
 
-      <a id="art" class="item col2" href="art/art.html" onmouseover="expandCol(2, 1)">
+      <a id="art" class="item col2" href="art.html">
         <h2>ART <span class="special">&</span> DESIGN</h2>
       </a>
     </div>

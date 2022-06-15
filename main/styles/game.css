@@ -1,13 +1,14 @@
 @font-face {
-  font-family: "Calling Code";
-  src: url(../main/fonts/CallingCode-Regular.ttf);
+  font-family: "GameOverCre";
+  src: url(../fonts/gameovercre1.ttf);
 }
 
 html {
   --yellow: #f9cc71;
   --whitish: #f4ebde;
-  --whitish-alpha1: #f4ebde33;
-  --whitish-alpha2: #f4ebde11;
+  --blackish-alpha1: #31344733;
+  --blackish-alpha2: #31344755;
+  --blackish-alpha3: #31344777;
   --blackish: #313447;
   --pink: #f69b8c;
   --green: #b3df72;
@@ -15,15 +16,15 @@ html {
 
 body {
   margin: 0;
-  color: var(--whitish);
-  font-family: "Calling Code";
-  background: var(--blackish);
+  color: var(--blackish);
+  font-family: "GameOverCre";
+  background: var(--whitish);
   font-size: 16px;
 }
 
 h1 {
-  font-size: 4em;
-  margin-top: 0;
+  font-size: 4.4em;
+  margin-top: 10px;
   margin-bottom: 0;
   text-align: center;
 }
@@ -42,7 +43,7 @@ a:visited {
   color: inherit;
 }
 
-#software {
+#game {
   margin: 0 auto;
   padding: 100px;
   max-width: 800px;
@@ -52,14 +53,19 @@ a:visited {
   position: fixed;
   top: 100px;
   left: 35px;
+  padding: 10px 5px 0 0;
   font-size: 4em;
   font-weight: bold;
   transition: background 0.3s, color 0.3s;
 }
 
 #back:hover {
-  background: var(--whitish-alpha1);
+  background: var(--blackish-alpha1);
   color: var(--pink)
+}
+
+#back:active {
+  background: var(--blackish-alpha2);
 }
 
 ul {
@@ -71,7 +77,7 @@ ul {
 
 ul li {
   padding: 0 25px;
-  border-right: var(--whitish) solid 3px;
+  border-right: var(--blackish) solid 3px;
 }
 
 ul li:last-child {
@@ -96,66 +102,35 @@ ul li:last-child {
   margin-top: 70px;
 }
 
-.card {
+.pic {
   box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  border: 2px solid var(--whitish);
-  border-radius: 10px;
+  padding: 2.25% 4%;
+  border: 4px solid var(--blackish);
+  box-shadow: -8px 8px var(--blackish-alpha3);
+  transition: padding 0.3s ease-in-out, background 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
-.card h2 {
-  margin: 0;
+.pic:hover {
+  padding: 0;
+  background: var(--yellow);
+  border: 4px solid var(--yellow);
 }
 
-.name {
-  flex-basis: 100%;
-  padding: 30px 0 30px 30px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.name h2 {
-  border-right: 2px solid var(--whitish);
-  padding-right: 30px;
-}
-
-.name:hover {
-  background: var(--whitish-alpha1);
-  color: var(--yellow);
-}
-
-.gh {
-  flex-basis: auto;
-  display: flex;
-  text-align: right;
-  height: inherit;
-  padding: 30px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  transition: background 0.3s;
-}
-
-.gh h2 {
-  margin: auto 0;
-}
-
-.gh:hover {
-  background: var(--whitish-alpha1);
-  color: var(--green);
-}
-
-.name:active, 
-.gh:active,
-#back:active {
-  background: var(--whitish-alpha2);
+.pic img {
+  display: block;
+  width: 100%;
+  /* border-radius: 8px; */
 }
 
 .descriptions {
   padding: 0 30px;
+  margin-top: 16px;
   margin-bottom: 0;
+}
+
+.special {
+  font-family: monospace;
 }
 
 /* scrollbar */
