@@ -88,6 +88,7 @@ ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
+  padding: 0;
 }
 
 ul li {
@@ -142,12 +143,16 @@ ul li:last-child {
   box-sizing: border-box;
   width: 100%;
   padding: 15px;
+  margin: 0;
   background: var(--whitish);
-  transition: padding 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out, margin 0.3s ease-in-out;
 }
 
 .image img:hover {
-  padding: 6.5625px 0px;
+  /* width: 102.9167%; */
+  width: calc(100% + 23.3333px);
+  padding: 0px;
+  margin-left: -11.6667px;
 }
 
 .descriptions {
