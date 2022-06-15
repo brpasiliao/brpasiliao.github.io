@@ -44,10 +44,10 @@ function adjustContent() {
   var software = document.getElementById("software");
 
   if (!isOverflown(software)) 
-    for (var i = 0; i < codes.length; i++)
+    for (var i = 0; i < codes.length-1; i++)
       codes[i].style.display = "block";
 
-  var l = codes.length - 1;
+  var l = codes.length - 2;
   while (l >= 0 && isOverflown(software)) {
     codes[l].style.display = "none";
     l--;
@@ -58,6 +58,69 @@ function isOverflown(element) {
   return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
 }
 
+function showConsole() {
+  document.getElementById("console").style.display = "block";
+}
+
+function hideConsole() {
+  document.getElementById("console").style.display = "none";
+}
+
+let interval = null;
+let prevLang = null;
+function typeAnimation(lang, greeting) {
+  var typed = document.getElementById("typed");
+  var text1 = lang + " says:"
+  var text2 = " " + greeting + " world!";
+
+  if (lang != prevLang) {
+    clearInterval(interval);
+
+    prevLang = lang;
+    typed.textContent = typed.textContent.substring(0, typed.textContent.length-1);
+    interval = setTimeout(delay1, 500);
+  }
+
+  function delay1() {
+    interval = setInterval(deletion, 20);
+  }
+
+  function deletion() {
+    if (typed.textContent == "") {
+      clearInterval(interval);
+      interval = setTimeout(delay2, 1000);
+    } else {
+      typed.textContent = typed.textContent.substring(0, typed.textContent.length-1);
+    }
+  }
+
+  function delay2() {
+    interval = setInterval(typing1, 70);
+  }
+
+  function typing1() {
+    if (text1 == "") {
+      clearInterval(interval);
+      interval = setTimeout(delay3, 500);
+    } else {
+      typed.textContent = typed.textContent + text1.charAt(0);
+      text1 = text1.substring(1);
+    }
+  }
+
+  function delay3() {
+    interval = setInterval(typing2, 70);
+  }
+
+  function typing2() {
+    if (text2 == "") {
+      clearInterval(interval);
+    } else {
+      typed.textContent = typed.textContent + text2.charAt(0);
+      text2 = text2.substring(1);
+    }
+  }
+}
 
 // needs fix
 function addTab(element) {

@@ -40,16 +40,20 @@
     </div>
 
     <div id="row2" class="row" onmouseover="expandRow(2, 1)">
-      <a id="software" class="item col1" href="software/software.html" onmouseover="expandCol(1, 2)">
+      <a id="software" class="item col1" href="software/software.html" onmouseover="expandCol(1, 2);showConsole()" onmouseout="hideConsole()">
         <h2>SOFTWARE ENGINEERING</h2>
         <div id="code">
-          <p><span class="class">System</span>.out.<span class="function">print</span>&#8203;(<span class="string">"Hello world!"</span>);</p>
-          <p><span class="class">Console</span>.<span class="function">Write</span>&#8203;(<span class="string">"Hello world!"</span>);</p>
-          <p>console.<span class="function">log</span>&#8203;(<span class="string">"Hello world!"</span>);</p>
-          <!-- <br>
-          <p><span class="comment">Java says:</span> Hello world!</p>
-          <p><span class="comment">C# says:</span> Hello world!</p>
-          <p><span class="comment">JavaScript says:</span> Hello world!</p> -->
+          <p onmouseover="typeAnimation('Java', 'Hello')">
+            <span class="class">System</span>.out.<span class="function">print</span>&#8203;(<span class="string">"Hello world!"</span>);
+          </p>
+          <p onmouseover="typeAnimation('C#', 'Hey')">
+            <span class="class">Console</span>.<span class="function">Write</span>&#8203;(<span class="string">"Hey world!"</span>);
+          </p>
+          <p onmouseover="typeAnimation('JavaScript', 'Hi')">
+            console.<span class="function">log</span>&#8203;(<span class="string">"Hi world!"</span>);
+          </p>
+
+          <p id="console"><br><span id="typed"></span><span id="caret">|</span></p>
         </div>
       </a>
 
