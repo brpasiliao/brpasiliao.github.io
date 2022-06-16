@@ -10,7 +10,8 @@ document.getElementById("software").onmouseout = ()=> {hideConsole()};
 document.getElementById("game").onmouseover = ()=> {expandCol(2, 1)};
 document.getElementById("art").onmouseover = ()=> {expandCol(2, 1)};
 
-document.getElementById("game").onmouseout = ()=> {changeDefault()};
+var sensors = document.getElementsByClassName("sensor");
+for (var i = 0; i < sensors.length; i++) {sensors[i].onmouseout = ()=> {changeDefault()};}
 document.getElementById("up").onmouseover = ()=> {change("up")};
 document.getElementById("right").onmouseover = ()=> {change("right")};
 document.getElementById("down").onmouseover = ()=> {change("down")};
@@ -20,6 +21,9 @@ var codes = document.getElementById("code").children;
 codes[0].onmouseover = ()=> {typeAnimation('Java', 'Hello')};
 codes[1].onmouseover = ()=> {typeAnimation('C#', 'Hey')};
 codes[2].onmouseover = ()=> {typeAnimation('JavaScript', 'Hi')};
+
+// var drawings = document.getElementById("drawings").children;
+// for (var i = 0; i < drawings.length; i++) {drawings[i].onmouseout = ()=> {draw()};}
 
 
 
@@ -73,7 +77,7 @@ function expandCol(c1, c2) {
 
 // changes game dev gif to a still
 function changeDefault() {
-  var pad = document.getElementById("pad");
+  var pad = document.getElementById("pad").firstElementChild;
   pad.src = "main/sprites/pad.png";
   var gif = document.getElementById("gif").firstElementChild;
   gif.src = "main/sprites/still.png";
@@ -82,7 +86,7 @@ function changeDefault() {
 
 // changes game dev gif to respective direction
 function change(direction) {
-  var pad = document.getElementById("pad");
+  var pad = document.getElementById("pad").firstElementChild;
   pad.src = "main/sprites/pad_" + direction + ".png";
   var gif = document.getElementById("gif").firstElementChild;
   gif.src = "main/sprites/walking_" + direction + ".gif";
@@ -149,6 +153,26 @@ function typeAnimation(lang, greeting) {
     } else {
       typed.textContent = typed.textContent + text2.charAt(0);
       text2 = text2.substring(1);
+    }
+  }
+}
+
+function erase(drawing) {
+  if (drawing.style.opacity == 0) drawing.style.opacity = 1;
+  if (drawing.style.opacity > 0.1) 
+    drawing.style.opacity -= 0.03;
+}
+
+function draw(drawing) {
+  if (drawing.style.opacity < 1) {
+    var artInterval = null;
+    artInterval = setInterval(opaque, 100);
+
+    function opaque() {
+      if (drawing.style.opacity >= 1) clearInterval(artInterval);
+      else {
+        drawing.style.opacity = parseFloat(drawing.style.opacity) + 0.03;
+      }
     }
   }
 }
