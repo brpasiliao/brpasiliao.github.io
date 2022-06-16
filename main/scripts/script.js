@@ -22,9 +22,6 @@ codes[0].onmouseover = ()=> {typeAnimation('Java', 'Hello')};
 codes[1].onmouseover = ()=> {typeAnimation('C#', 'Hey')};
 codes[2].onmouseover = ()=> {typeAnimation('JavaScript', 'Hi')};
 
-// var drawings = document.getElementById("drawings").children;
-// for (var i = 0; i < drawings.length; i++) {drawings[i].onmouseout = ()=> {draw()};}
-
 
 
 // shrinks boxes back to equal sizes
@@ -165,14 +162,17 @@ function erase(drawing) {
 
 function draw(drawing) {
   if (drawing.style.opacity < 1) {
-    var artInterval = null;
-    artInterval = setInterval(opaque, 100);
+    let artInterval = null;
+    artInterval = setTimeout(delay, 500);
+
+    function delay() {
+      artInterval = setInterval(opaque, 100);
+    }
 
     function opaque() {
-      if (drawing.style.opacity >= 1) clearInterval(artInterval);
-      else {
-        drawing.style.opacity = parseFloat(drawing.style.opacity) + 0.03;
-      }
+      if (drawing.style.opacity >= 1 || drawing.matches(':hover')) 
+        clearInterval(artInterval);
+      else drawing.style.opacity = parseFloat(drawing.style.opacity) + 0.03;
     }
   }
 }

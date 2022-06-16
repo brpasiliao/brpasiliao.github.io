@@ -106,7 +106,6 @@ a {
 
 #game {
   justify-content: space-between;
-  /* position: relative; */
   background-color: var(--whitish);
   font-family: "GameOverCre";
 }
@@ -159,7 +158,6 @@ a {
 
 .sensor {
   position: absolute;
-  /* border: black 1px solid; */
 }
 
 #up {
@@ -235,50 +233,28 @@ a {
 #art {
   background-color: var(--pink);
   font-family: "Sprinkle";
-  /* overflow: scroll; */
 }
 
 .special {
   font-family: "Baby Doll";
 }
 
-/* .drawings {
-  display: flex;
-  justify-content: space-between;
-  height: calc(50% - 32px);
-}
-
-.drawing {
-  flex-basis: 25%;
-  padding: 10px;
-}
-
-.drawing img {
-  height: 100%;
-  width: auto;
-} */
-
 #drawings {
   max-width: 100%;
   max-height: calc(100% - 64px);
   display: grid;
   grid-template-columns: repeat(6, 16.67%);
-  grid-template-rows: repeat(4, 25%);
+  grid-template-rows: repeat(3, 33.33%);
   grid-template-areas: 
     "a a a b c d"
     "a a a e f d"
-    "g h i j k d"
-    "l m m n k o";
-    /* "a a a b c d"
-    "a a a e f d"
-    "g h h i f d" */
+    "g h h i f d";
 }
 
 #drawings img {
   margin: auto;
   max-width: 100%;
   max-height: 100%;
-  /* opacity: 1; */
 }
 
 .a {
@@ -289,10 +265,10 @@ a {
   grid-area: d;
 }
 
-.m {
-  grid-area: m;
+.f {
+  grid-area: f;
 }
 
-.k {
-  grid-area: k;
+.h {
+  grid-area: h;
 }
