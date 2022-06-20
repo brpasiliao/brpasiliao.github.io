@@ -1,14 +1,11 @@
 document.body.onmouseout = ()=> {shrink()};
 document.body.ontransitionend = ()=> {adjustContent()};
 
-document.getElementById("row1").onmouseover = ()=> {expandRow(1, 2)};
-document.getElementById("row2").onmouseover = ()=> {expandRow(2, 1)};
-
-document.getElementById("name").onmouseover = ()=> {expandCol(1, 2)};
-document.getElementById("software").onmouseover = ()=> {expandCol(1, 2); showConsole()};
+document.getElementById("name").onmouseover = ()=> {expandBox(1, 2, 1, 2)};
+document.getElementById("software").onmouseover = ()=> {expandBox(2, 1, 1, 2); showConsole()};
 document.getElementById("software").onmouseout = ()=> {hideConsole()};
-document.getElementById("game").onmouseover = ()=> {expandCol(2, 1)};
-document.getElementById("art").onmouseover = ()=> {expandCol(2, 1)};
+document.getElementById("game").onmouseover = ()=> {expandBox(1, 2, 2, 1)};
+document.getElementById("art").onmouseover = ()=> {expandBox(2, 1, 2, 1)};
 
 var sensors = document.getElementsByClassName("sensor");
 for (var i = 0; i < sensors.length; i++) {sensors[i].onmouseout = ()=> {changeDefault()};}
@@ -22,18 +19,87 @@ codes[0].onmouseover = ()=> {typeAnimation('Java', 'Hello')};
 codes[1].onmouseover = ()=> {typeAnimation('C#', 'Hey')};
 codes[2].onmouseover = ()=> {typeAnimation('JavaScript', 'Hi')};
 
+window.onresize = ()=> {
+  var rows = document.getElementsByClassName("row");
+  var items = document.getElementsByClassName("item");
+
+  if (window.innerWidth <= 800) {
+    for (var i = 0; i < rows.length; i++) {
+      rows[i].style.width = "100%";
+      rows[i].style.height = "auto";
+    }
+    for (var i = 0; i < items.length; i++) {
+      items[i].style.width = "auto";
+      items[i].style.height = "calc((40vh - 100px))";
+    }
+  } else {
+    for (var i = 0; i < rows.length; i++) {
+      rows[i].style.width = "auto";
+      rows[i].style.height = "50vh";
+    }
+    for (var i = 0; i < items.length; i++) {
+      items[i].style.width = "50%";
+      items[i].style.height = "auto";
+    }
+  }
+}
+
 
 
 // shrinks boxes back to equal sizes
 function shrink() {
-  var row1 = document.getElementById("row1");
-  var row2 = document.getElementById("row2");
-  var col1 = document.getElementsByClassName("col1");
-  var col2 = document.getElementsByClassName("col2");
-  row1.style.height = "50vh";
-  row2.style.height = "50vh";
-  for (var i = 0; i < col1.length; i++) {col1[i].style.width = "50%";}
-  for (var i = 0; i < col2.length; i++) {col2[i].style.width = "50%";}
+  if (window.innerWidth <= 800) {
+    var boxes = document.getElementsByClassName("item");
+    for (var i = 0; i < boxes.length; i++) {boxes[i].style.height = "calc((40vh - 100px))";}
+  } else {
+    var row1 = document.getElementById("row1");
+    var row2 = document.getElementById("row2");
+    row1.style.height = "50vh";
+    row2.style.height = "50vh";
+
+    var col1 = document.getElementsByClassName("col1");
+    var col2 = document.getElementsByClassName("col2");
+    for (var i = 0; i < col1.length; i++) {col1[i].style.width = "50%";}
+    for (var i = 0; i < col2.length; i++) {col2[i].style.width = "50%";}
+  }
+}
+
+// transition to make box bigger
+function expandBox(r1, r2, c1, c2) {
+  if (window.innerWidth <= 800) {
+    document.querySelector("#row" + r1 + " .col" + c1).style.height = "calc((55vh - 100px))";
+    document.querySelector("#row" + r1 + " .col" + c2).style.height = "calc((35vh - 100px))";
+    document.querySelector("#row" + r2 + " .col" + c1).style.height = "calc((35vh - 100px))";
+    document.querySelector("#row" + r2 + " .col" + c2).style.height = "calc((35vh - 100px))";
+  } else {
+    var row1 = document.getElementById("row" + r1);
+    var row2 = document.getElementById("row" + r2);
+    row1.style.height = "60vh";
+    row2.style.height = "40vh";
+
+    var col1 = document.getElementsByClassName("col" + c1);
+    var col2 = document.getElementsByClassName("col" + c2);
+    for (var i = 0; i < col1.length; i++) {col1[i].style.width = "60%";}
+    for (var i = 0; i < col2.length; i++) {col2[i].style.width = "40%";}
+  }
+}
+
+// changes game dev gif to a still
+function changeDefault() {
+  var pad = document.getElementById("pad").firstElementChild;
+  pad.src = "main/sprites/pad.png";
+  var gif = document.getElementById("gif").firstElementChild;
+  gif.src = "main/sprites/still.png";
+  return false;
+}
+
+// changes game dev gif to respective direction
+function change(direction) {
+  var pad = document.getElementById("pad").firstElementChild;
+  pad.src = "main/sprites/pad_" + direction + ".png";
+  var gif = document.getElementById("gif").firstElementChild;
+  gif.src = "main/sprites/walking_" + direction + ".gif";
+  return false;
 }
 
 // caps software engineering text overflow when changing box sizes
@@ -54,40 +120,6 @@ function adjustContent() {
   function isOverflown(element) {
     return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
   }
-}
-
-// transition to make box row bigger
-function expandRow(r1, r2) {
-  var row1 = document.getElementById("row" + r1);
-  var row2 = document.getElementById("row" + r2);
-  row1.style.height = "60vh";
-  row2.style.height = "40vh";
-}
-
-// transition to make box column bigger
-function expandCol(c1, c2) {
-  var col1 = document.getElementsByClassName("col" + c1);
-  var col2 = document.getElementsByClassName("col" + c2);
-  for (var i = 0; i < col1.length; i++) {col1[i].style.width = "60%";}
-  for (var i = 0; i < col2.length; i++) {col2[i].style.width = "40%";}
-}
-
-// changes game dev gif to a still
-function changeDefault() {
-  var pad = document.getElementById("pad").firstElementChild;
-  pad.src = "main/sprites/pad.png";
-  var gif = document.getElementById("gif").firstElementChild;
-  gif.src = "main/sprites/still.png";
-  return false;
-}
-
-// changes game dev gif to respective direction
-function change(direction) {
-  var pad = document.getElementById("pad").firstElementChild;
-  pad.src = "main/sprites/pad_" + direction + ".png";
-  var gif = document.getElementById("gif").firstElementChild;
-  gif.src = "main/sprites/walking_" + direction + ".gif";
-  return false;
 }
 
 function showConsole() {
