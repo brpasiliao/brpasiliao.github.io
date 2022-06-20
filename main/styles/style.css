@@ -162,31 +162,31 @@ a {
 }
 
 #up {
-  width: 40px;
-  height: 35px;
-  top: 0px;
-  left: 42px;
+  width: 33.33%;
+  height: 28%;
+  top: 0;
+  left: 35%;
 }
 
 #right {
-  width: 35px;
-  height: 41px;
-  top: 36px;
-  right: 0px;
+  width: 29%;
+  height: 33%;
+  top: 28.5%;
+  right: 0;
 }
 
 #down {
-  width: 40px;
-  height: 35px;
-  bottom: 10px;
-  left: 42px;
+  width: 33.33%;
+  height: 27.8%;
+  bottom: 8.33%;
+  left: 35%;
 }
 
 #left {
-  width: 35px;
-  height: 41px;
-  top: 36px;
-  left: 6px;
+  width: 29%;
+  height: 33%;
+  top: 28.5%;
+  left: 5%;
 }
 
 /* software */
@@ -242,7 +242,7 @@ a {
 
 #drawings {
   max-width: 100%;
-  max-height: calc(100% - 64px);
+  max-height: calc(100% - 67px);
   display: grid;
   grid-template-columns: repeat(6, 16.67%);
   grid-template-rows: repeat(3, 33.33%);
@@ -295,7 +295,7 @@ a {
   background: #00000066; 
 }
 
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 350px) {
   h1 {
     font-size: 10.91vw;
   }
@@ -307,9 +307,7 @@ a {
   p {
     font-size: 4.85vw;
   }
-}
 
-@media only screen and (max-width: 800px) {
   .row {
     display: block;
     width: 100%;
@@ -321,6 +319,98 @@ a {
     width: auto;
     height: calc((40vh - 100px));
     transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
+    padding: 25px;
+  }
+
+  #name {
+    padding-bottom: 30px;
+  }
+
+  #links a {
+    padding: 0 15px;
+  }
+
+  #links img {
+    width: 30px;
+    height: 30px;
+  }
+
+  #game-row {
+    height: calc(100% - 3px - 9.7vw);
+  }
+
+  #drawings {
+    max-height: calc(100% - 3px - 9.7vw);
+  }
+
+  #pad img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media only screen and (min-width: 351px) and (max-width: 660px) {
+  h1 {
+    font-size: 10.91vw;
+  }
+
+  h2 {
+    font-size: 4.85vw;
+  }
+
+  p {
+    font-size: 4.85vw;
+  }
+
+  .row {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .item {
+    display: block;
+    width: auto;
+    height: calc((40vh - 100px));
+    transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+
+  #links img {
+    width: 40px;
+    height: 40px;
+  }
+
+  #game-row {
+    height: calc(100% - 3px - 9.7vw);
+  }
+
+  #pad img {
+    width: 80px;
+    height: 80px;
+  }
+
+  #drawings {
+    max-height: calc(100% - 3px - 9.7vw);
+  }
+}
+
+@media only screen and (min-width: 661px) and (max-width: 800px) {
+  .row {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .item {
+    display: block;
+    width: auto;
+    height: calc((40vh - 100px));
+    transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+
+  #pad img {
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -336,9 +426,17 @@ a {
   p {
     font-size: 3.2vw;
   }
+
+  #game-row {
+    height: calc(100% - 3px - 6.4vw);
+  }
+
+  #drawings {
+    max-height: calc(100% - 3px - 6.4vw);
+  }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1450px) {
   h1 {
     font-size: 5vw;
   }
@@ -349,5 +447,35 @@ a {
 
   p {
     font-size: 2.22vw;
+  }
+
+  #game-row {
+    height: calc(100% - 3px - 4.44vw);
+  }
+
+  #links img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #pad img {
+    width: 160px;
+    height: 160px;
+  }
+
+  #drawings {
+    max-height: calc(100% - 3px - 4.44vw);
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  #pad img {
+    width: 200px;
+    height: 200px;
+  }
+
+  #links img {
+    width: 70px;
+    height: 70px;
   }
 }
