@@ -121,7 +121,8 @@ a {
 }
 
 #pad {
-  margin: auto 30px auto 20px;
+  /* margin: auto 30px auto 20px; */
+  margin: auto 30px auto 0;
   display: block;
   position: relative;
 }
@@ -295,7 +296,7 @@ a {
   background: #00000066; 
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 400px) {
   h1 {
     font-size: 10.91vw;
   }
@@ -317,9 +318,9 @@ a {
   .item {
     display: block;
     width: auto;
-    height: calc((40vh - 100px));
+    height: 50vw;
     transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
-    padding: 25px;
+    padding: 8%;
   }
 
   #name {
@@ -333,6 +334,10 @@ a {
   #links img {
     width: 30px;
     height: 30px;
+  }
+
+  #gif {
+    border: var(--blackish) 5px solid;
   }
 
   #game-row {
@@ -349,7 +354,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 351px) and (max-width: 660px) {
+@media only screen and (min-width: 401px) and (max-width: 660px) {
   h1 {
     font-size: 10.91vw;
   }
@@ -371,7 +376,7 @@ a {
   .item {
     display: block;
     width: auto;
-    height: calc((40vh - 100px));
+    height: 50vw;
     transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
   }
 
@@ -385,8 +390,8 @@ a {
   }
 
   #pad img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
 
   #drawings {
@@ -404,13 +409,8 @@ a {
   .item {
     display: block;
     width: auto;
-    height: calc((40vh - 100px));
+    height: 50vw;
     transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
-  }
-
-  #pad img {
-    width: 100px;
-    height: 100px;
   }
 }
 
@@ -433,6 +433,11 @@ a {
 
   #drawings {
     max-height: calc(100% - 3px - 6.4vw);
+  }
+
+  #pad img {
+    width: 100px;
+    height: 100px;
   }
 }
 

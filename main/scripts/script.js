@@ -30,7 +30,7 @@ window.onresize = ()=> {
     }
     for (var i = 0; i < items.length; i++) {
       items[i].style.width = "auto";
-      items[i].style.height = "calc((40vh - 100px))";
+      items[i].style.height = "50vw";
     }
   } else {
     for (var i = 0; i < rows.length; i++) {
@@ -50,7 +50,7 @@ window.onresize = ()=> {
 function shrink() {
   if (window.innerWidth <= 800) {
     var boxes = document.getElementsByClassName("item");
-    for (var i = 0; i < boxes.length; i++) {boxes[i].style.height = "calc((40vh - 100px))";}
+    for (var i = 0; i < boxes.length; i++) {boxes[i].style.height = "50vw";}
   } else {
     var row1 = document.getElementById("row1");
     var row2 = document.getElementById("row2");
@@ -67,10 +67,10 @@ function shrink() {
 // transition to make box bigger
 function expandBox(r1, r2, c1, c2) {
   if (window.innerWidth <= 800) {
-    document.querySelector("#row" + r1 + " .col" + c1).style.height = "calc((55vh - 100px))";
-    document.querySelector("#row" + r1 + " .col" + c2).style.height = "calc((35vh - 100px))";
-    document.querySelector("#row" + r2 + " .col" + c1).style.height = "calc((35vh - 100px))";
-    document.querySelector("#row" + r2 + " .col" + c2).style.height = "calc((35vh - 100px))";
+    document.querySelector("#row" + r1 + " .col" + c1).style.height = "62vw";
+    document.querySelector("#row" + r1 + " .col" + c2).style.height = "46vw";
+    document.querySelector("#row" + r2 + " .col" + c1).style.height = "46vw";
+    document.querySelector("#row" + r2 + " .col" + c2).style.height = "46vw";
   } else {
     var row1 = document.getElementById("row" + r1);
     var row2 = document.getElementById("row" + r2);
