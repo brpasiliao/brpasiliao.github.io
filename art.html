@@ -11,16 +11,34 @@
       <h1>ART <span id="amp">&</span> DESIGN PORTFOLIO</h1>
       <ul>
         <li><a class="link" href="https://www.behance.net/bianpasiliao" target="_blank">Behance</a></li>
-        <li><a class="link" href="#">Instagram</a></li>
+        <li><a class="link" href="https://instagram.com/muyy_bian" target="_blank">Instagram</a></li>
       </ul>
 
       <div class="project">
-        <h2><span class="special">3</span>D Artworks</h2>
+        <h2><span class="special">3</span>D Modeling</h2>
         <div class="images">
-          <img src="main/images/art/mycelium-buds.jpg" alt="personified mushrooms sleeping under a tree" onclick="showOverlay(this)">
-          <img src="main/images/art/darumaka.jpg" alt="a regular darumaka and a galarian darumaka" onclick="showOverlay(this)">
-          <img src="main/images/art/shelf.jpg" alt="a shelf with books, bottles, and trinkets" onclick="showOverlay(this)">
-          <img src="main/images/art/vending-machine.jpg" alt="a vending machine selling potted plants" onclick="showOverlay(this)">
+          <img src="main/images/art/mycelium-buds.jpg" alt="personified mushrooms sleeping under a tree" onclick="setOverlayPic(this)">
+          <img src="main/images/art/darumaka.jpg" alt="a regular darumaka and a galarian darumaka" onclick="setOverlayPic(this)">
+          <img src="main/images/art/shelf.jpg" alt="a shelf with books, bottles, and trinkets" onclick="setOverlayPic(this)">
+          <img src="main/images/art/vending-machine.jpg" alt="a vending machine selling potted plants" onclick="setOverlayPic(this)">
+        </div>
+        <p class="descriptions">
+          All created using Cinema<span class="special">4</span>D
+        </p>
+      </div>
+
+      <div class="project">
+        <h2><span class="special">3</span>D Animation</h2>
+        <div class="images">
+          <video muted loop onclick="setOverlayVid(this)" onmouseover="this.currentTime=0;this.play()" onmouseout="this.pause();this.currentTime=1.6;" onloadedmetadata="this.currentTime=1.6">
+            <source src="main/images/art/plant.mp4" type="video/mp4"></source>
+          </video>
+          <video muted loop onclick="setOverlayVid(this)" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=4;" onloadedmetadata="this.currentTime=4">
+            <source src="main/images/art/python.mp4" type="video/mp4"></source>
+          </video>
+          <video muted loop onclick="setOverlayVid(this)" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+            <source src="main/images/art/fire-escape.mp4" type="video/mp4"></source>
+          </video>
         </div>
         <p class="descriptions">
           All created using Cinema<span class="special">4</span>D

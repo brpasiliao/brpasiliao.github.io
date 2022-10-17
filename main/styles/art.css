@@ -125,16 +125,17 @@ ul li:last-child {
   padding-bottom: 4px;
 }
 
-.images img {
+.images img,
+.images video {
   max-height: 420px;
-  /* padding: 15px 0 15px 15px; */
   padding: 15px;
   background-color: var(--whitish);
   cursor: pointer;
   transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
-.images img:hover {
+.images img:hover,
+.images video:hover {
   max-height: 450px;
   padding: 0;
 }
@@ -180,7 +181,8 @@ ul li:last-child {
   cursor: pointer;
 }
 
-#overlay img {
+#overlay img,
+#overlay video {
   position: fixed;
   max-height: 80%;
   max-width: 80%;

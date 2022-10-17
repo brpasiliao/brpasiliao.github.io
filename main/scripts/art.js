@@ -4,13 +4,31 @@
 
 document.getElementById("overlay").onclick = ()=> {hideOverlay()};
 
-function showOverlay(image) {
+function setOverlayPic(image) {
   const pic = document.createElement("img");
   pic.src = image.src;
   pic.alt = image.alt;
 
+  showOverlay(pic);
+}
+
+function setOverlayVid(video) {
+  const sou = document.createElement("source");
+  sou.src = video.firstElementChild.src;
+  sou.type = video.firstElementChild.type;
+
+  const vid = document.createElement("video");
+  vid.autoplay = true;
+  vid.controls = true;
+  vid.loop = true;
+  vid.appendChild(sou);
+
+  showOverlay(vid);
+}
+
+function showOverlay(elem) {
   var ol = document.getElementById("overlay");
-  ol.appendChild(pic);
+  ol.appendChild(elem);
   ol.style.display = "block";
 
   document.body.classList.add("scroll-toggle");
