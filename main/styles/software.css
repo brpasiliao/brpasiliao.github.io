@@ -2,6 +2,11 @@
   font-family: "Calling Code";
   src: url(../fonts/CallingCode-Regular.ttf);
 }
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url(../fonts/glacial-indifference.regular.otf);
+}
+
 
 html {
   --yellow: #f9cc71;
@@ -79,7 +84,7 @@ ul li:last-child {
 }
 
 .link {
-  font-size: 24px;
+  font-size: 1.5em;
   text-decoration: underline;
   transition: color 0.3s;
 }
@@ -155,7 +160,10 @@ ul li:last-child {
 
 .descriptions {
   padding: 0 30px;
-  margin-bottom: 0;
+  margin: 5px 0 0 0;
+  font-family: "Glacial Indifference";
+  font-size: 1em;
+  line-height: 1.3em;
 }
 
 /* scrollbar */

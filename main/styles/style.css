@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Instruction";
-  src: url(../fonts/Instruction.otf);
+  font-family: "Glacial Indifference";
+  src: url(../fonts/glacial-indifference.regular.otf);
 }
 @font-face {
   font-family: "Calling Code";
@@ -23,6 +23,7 @@
   src: url(../fonts/Baby\ Doll.ttf);
 }
 
+
 html {
   --yellow: #f9cc71;
   --whitish: #f4ebde;
@@ -38,8 +39,8 @@ body {
 }
 
 h1 {
-  font-size: 72px;
-  font-family: "Instruction";
+  font-size: 90px;
+  font-family: "Glacial Indifference";
   text-align: center;
   margin: 0 0 20px 0;
 }
