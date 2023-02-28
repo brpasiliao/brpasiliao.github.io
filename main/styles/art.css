@@ -97,6 +97,7 @@ ul {
 }
 
 ul li {
+  font-size: 1.5em;
   padding: 0 25px;
   border-right: var(--blackish) solid 3px;
 }
@@ -106,7 +107,6 @@ ul li:last-child {
 }
 
 .link {
-  font-size: 1.5em;
   text-decoration: underline;
   transition: color 0.3s;
 }
