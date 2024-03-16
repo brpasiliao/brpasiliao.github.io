@@ -1,0 +1,63 @@
+/* main */
+
+h2 {
+  margin: 5px 0 0;
+}
+
+ul {
+  margin: 0;
+  font-family: "Glacial Indifference";
+  line-height: 1.3rem;
+}
+
+/* sidebar */
+
+.sidebar {
+  background-color: var(--yellow);
+}
+
+/* page */
+
+.content {
+  max-width: 800px;
+}
+
+.link:hover {
+  background-color: var(--yellow);
+}
+
+.link:active {
+  background-color: var(--dark-yellow);
+}
+
+/* sections */
+
+.section {
+  margin-top: 50px;
+}
+
+/* introduction */
+
+#introduction img {
+  float: left;
+  width: 35%;
+  min-width: 200px;
+  margin: 0 25px 10px 0;
+  border: 6px solid var(--yellow);
+  box-sizing: border-box;
+  padding: 2%;
+}
+
+#phonetic {
+  margin-top: 0;
+}
+
+/* responsive */
+
+@media screen and (max-width: 450px) {
+  #introduction img {
+    width: 100%;
+    padding: 4%;
+    margin-bottom: 15px;
+  }
+}

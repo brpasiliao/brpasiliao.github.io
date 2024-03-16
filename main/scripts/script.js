@@ -1,210 +1,157 @@
-document.body.onmouseout = ()=> {shrink()};
-document.body.ontransitionend = ()=> {adjustContent()};
+// text type
 
-document.getElementById("name").onmouseover = ()=> {expandBox(1, 2, 1, 2)};
-document.getElementById("software").onmouseover = ()=> {expandBox(2, 1, 1, 2); showConsole()};
-document.getElementById("software").onmouseout = ()=> {hideConsole()};
-document.getElementById("game").onmouseover = ()=> {expandBox(1, 2, 2, 1)};
-document.getElementById("art").onmouseover = ()=> {expandBox(2, 1, 2, 1)};
+var codes = document.getElementById("commentary");
+document.body.onload = () => {
+  say('Hey there,', ' thanks for stopping by!');
+}
 
-var sensors = document.getElementsByClassName("sensor");
-for (var i = 0; i < sensors.length; i++) {sensors[i].onmouseout = ()=> {changeDefault()};}
-document.getElementById("up").onmouseover = ()=> {change("up")};
-document.getElementById("right").onmouseover = ()=> {change("right")};
-document.getElementById("down").onmouseover = ()=> {change("down")};
-document.getElementById("left").onmouseover = ()=> {change("left")};
+var typed = document.getElementById("typed");
+var typingInterval = null;
+var typing = false;
 
-var codes = document.getElementById("code").children;
-codes[0].onmouseover = ()=> {typeAnimation('Java', 'Hello')};
-codes[1].onmouseover = ()=> {typeAnimation('C#', 'Hey')};
-codes[2].onmouseover = ()=> {typeAnimation('JavaScript', 'Hi')};
-
-window.onresize = ()=> {
-  var rows = document.getElementsByClassName("row");
-  var items = document.getElementsByClassName("item");
-
-  if (window.innerWidth <= 800) {
-    for (var i = 0; i < rows.length; i++) {
-      rows[i].style.width = "100%";
-      rows[i].style.height = "auto";
-    }
-    for (var i = 0; i < items.length; i++) {
-      items[i].style.width = "auto";
-      items[i].style.height = "50vw";
-    }
+function say(part1, part2 = "") {
+  if (typing) return;
+  
+  if (typed.textContent != "") {
+    clearInterval(typingInterval);
+    typing = true;
+    delay(500, () => {
+      deleteText(() => {
+        typeText(part1, part2);
+      });
+    })
   } else {
-    for (var i = 0; i < rows.length; i++) {
-      rows[i].style.width = "auto";
-      rows[i].style.height = "50vh";
+    typing = true;
+    typeText(part1, part2);
+  }
+}
+
+function typeText(part1, part2) {
+  delay(500, () => {
+    typePart(part1, () => {
+      delay(500, () => {
+        typePart(part2, () => {
+          typing = false;
+        });
+      });
+    });
+  });
+}
+
+function delay(ms, doAfter) {
+  timeout = setTimeout(doAfter, ms);
+}
+
+function typePart(part, doAfter) {
+  typingInterval = setInterval(() => {
+    if (part == "") {
+      clearInterval(typingInterval);
+      doAfter();
+    } else {
+      typed.textContent = typed.textContent + part.charAt(0);
+      part = part.substring(1);
     }
-    for (var i = 0; i < items.length; i++) {
-      items[i].style.width = "50%";
-      items[i].style.height = "auto";
-    }
-  }
+  }, 70);
 }
 
-
-
-// shrinks boxes back to equal sizes
-function shrink() {
-  if (window.innerWidth <= 800) {
-    var boxes = document.getElementsByClassName("item");
-    for (var i = 0; i < boxes.length; i++) {boxes[i].style.height = "50vw";}
-  } else {
-    var row1 = document.getElementById("row1");
-    var row2 = document.getElementById("row2");
-    row1.style.height = "50vh";
-    row2.style.height = "50vh";
-
-    var col1 = document.getElementsByClassName("col1");
-    var col2 = document.getElementsByClassName("col2");
-    for (var i = 0; i < col1.length; i++) {col1[i].style.width = "50%";}
-    for (var i = 0; i < col2.length; i++) {col2[i].style.width = "50%";}
-  }
-}
-
-// transition to make box bigger
-function expandBox(r1, r2, c1, c2) {
-  if (window.innerWidth <= 800) {
-    document.querySelector("#row" + r1 + " .col" + c1).style.height = "62vw";
-    document.querySelector("#row" + r1 + " .col" + c2).style.height = "46vw";
-    document.querySelector("#row" + r2 + " .col" + c1).style.height = "46vw";
-    document.querySelector("#row" + r2 + " .col" + c2).style.height = "46vw";
-  } else {
-    var row1 = document.getElementById("row" + r1);
-    var row2 = document.getElementById("row" + r2);
-    row1.style.height = "60vh";
-    row2.style.height = "40vh";
-
-    var col1 = document.getElementsByClassName("col" + c1);
-    var col2 = document.getElementsByClassName("col" + c2);
-    for (var i = 0; i < col1.length; i++) {col1[i].style.width = "60%";}
-    for (var i = 0; i < col2.length; i++) {col2[i].style.width = "40%";}
-  }
-}
-
-// changes game dev gif to a still
-function changeDefault() {
-  var pad = document.getElementById("pad").firstElementChild;
-  pad.src = "main/sprites/pad.png";
-  var gif = document.getElementById("gif").firstElementChild;
-  gif.src = "main/sprites/still.png";
-  return false;
-}
-
-// changes game dev gif to respective direction
-function change(direction) {
-  var pad = document.getElementById("pad").firstElementChild;
-  pad.src = "main/sprites/pad_" + direction + ".png";
-  var gif = document.getElementById("gif").firstElementChild;
-  gif.src = "main/sprites/walking_" + direction + ".gif";
-  return false;
-}
-
-// caps software engineering text overflow when changing box sizes
-function adjustContent() {
-  var codes = document.getElementById("code").children;
-  var software = document.getElementById("software");
-
-  if (!isOverflown(software)) 
-    for (var i = 0; i < codes.length-1; i++)
-      codes[i].style.display = "block";
-
-  var l = codes.length - 2;
-  while (l >= 0 && isOverflown(software)) {
-    codes[l].style.display = "none";
-    l--;
-  }
-
-  function isOverflown(element) {
-    return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-  }
-}
-
-function showConsole() {
-  document.getElementById("console").style.display = "block";
-}
-
-function hideConsole() {
-  document.getElementById("console").style.display = "none";
-}
-
-let interval = null;
-let prevLang = null;
-function typeAnimation(lang, greeting) {
-  var typed = document.getElementById("typed");
-  var text1 = lang + " says:"
-  var text2 = " " + greeting + " world!";
-
-  if (lang != prevLang) {
-    clearInterval(interval);
-
-    prevLang = lang;
-    typed.textContent = typed.textContent.substring(0, typed.textContent.length-1);
-    interval = setTimeout(delay1, 500);
-  }
-
-  function delay1() {
-    interval = setInterval(deletion, 20);
-  }
-
-  function deletion() {
+function deleteText(doAfter) {
+  deletingInterval = setInterval(() => {
     if (typed.textContent == "") {
-      clearInterval(interval);
-      interval = setTimeout(delay2, 500);
+      clearInterval(deletingInterval);
+      doAfter();
     } else {
       typed.textContent = typed.textContent.substring(0, typed.textContent.length-1);
     }
-  }
+  }, 20);
+}
 
-  function delay2() {
-    interval = setInterval(typing1, 70);
-  }
+// game animation
 
-  function typing1() {
-    if (text1 == "") {
-      clearInterval(interval);
-      interval = setTimeout(delay3, 500);
-    } else {
-      typed.textContent = typed.textContent + text1.charAt(0);
-      text1 = text1.substring(1);
-    }
-  }
+let currentMood = "happy";
+let currentDirection = "none";
+let gif = document.getElementById("gif").firstElementChild;
 
-  function delay3() {
-    interval = setInterval(typing2, 70);
-  }
+document.getElementById("up").onmouseup = () => {changeDirection("up")};
+document.getElementById("right").onmouseup = () => {changeDirection("right")};
+document.getElementById("down").onmouseup = () => {changeDirection("down")};
+document.getElementById("left").onmouseup = () => {changeDirection("left")};
 
-  function typing2() {
-    if (text2 == "") {
-      clearInterval(interval);
-    } else {
-      typed.textContent = typed.textContent + text2.charAt(0);
-      text2 = text2.substring(1);
-    }
+document.getElementById("happy").onmouseup = () => {changeMood("happy")};
+document.getElementById("sad").onmouseup = () => {changeMood("sad")};
+
+function changeDefault() {
+  currentDirection = "none";
+  gif.src = "main/sprites/still_" + currentMood + ".png";
+}
+
+function changeDirection(direction) {
+  if (direction == currentDirection) {
+    changeDefault();
+  } else {
+    currentDirection = direction
+    change();
   }
 }
 
-function erase(drawing) {
-  if (drawing.style.opacity == 0) drawing.style.opacity = 1;
-  if (drawing.style.opacity > 0.1) 
-    drawing.style.opacity -= 0.03;
-}
+function changeMood(mood) {
+  if (typing) return;
 
-function draw(drawing) {
-  if (drawing.style.opacity < 1) {
-    let artInterval = null;
-    artInterval = setTimeout(delay, 500);
+  checkNarrative(mood); 
+  currentMood = mood;
 
-    function delay() {
-      artInterval = setInterval(opaque, 100);
-    }
-
-    function opaque() {
-      if (drawing.style.opacity >= 1 || drawing.matches(':hover')) 
-        clearInterval(artInterval);
-      else drawing.style.opacity = parseFloat(drawing.style.opacity) + 0.03;
-    }
+  if (currentDirection == "none") {
+    changeDefault();
+  } else {
+    change();
   }
 }
+
+function change() {
+  if (currentDirection == "up") {
+    gif.src = "main/sprites/walking_up.gif";
+  } else {
+    gif.src = "main/sprites/walking_" + currentDirection + "_" + currentMood + ".gif";
+  }
+}
+
+let happyToSadNarrative = 0;
+let sadToHappyNarrative = 0;
+function checkNarrative(mood) {
+  if (currentMood == "happy" && mood == "sad") {
+    if (happyToSadNarrative == 0) {
+      say("Aw,", " why'd you make him sad?");
+    } else if (happyToSadNarrative == 1) {
+      say("Doesn't mean you have to make him sad, though.", " Again.");
+    } else if (happyToSadNarrative == 2) {
+      say("There are other buttons too, you know?");
+    } else if (happyToSadNarrative == 3) {
+      say("At least those won't make him sad.");
+    } else if (happyToSadNarrative == 4) {
+      say("...", "the other top.");
+    } else if (happyToSadNarrative == 5) {
+      say("Or not.");
+    } else if (happyToSadNarrative == 6) {
+      say("But either way...");
+    }
+    happyToSadNarrative++;
+
+  } else if (currentMood == "sad" && mood == "happy") {
+    if (sadToHappyNarrative == 0) {
+      say("Because there's a button?", " Fair enough.");
+    } else if (sadToHappyNarrative == 1) {
+      say("Ahhh,", " much better.")
+    } else if (sadToHappyNarrative == 2) {
+      say("Colorful ones in a nice bar or stack,", " it depends on your screen size.");
+    } else if (sadToHappyNarrative == 3) {
+      say("They're right there at top!")
+    } else if (sadToHappyNarrative == 4) {
+      say("Check them out!")
+    } else if (sadToHappyNarrative == 5) {
+      say("Completely up to you.")
+    } else if (sadToHappyNarrative == 6) {
+      say("Thanks again for stopping by!")
+    }
+    sadToHappyNarrative++;
+  }
+}
+

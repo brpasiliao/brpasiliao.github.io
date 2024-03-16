@@ -1,0 +1,45 @@
+/* responsive */
+
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    padding: 0;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .sidebar a {
+    display: block;
+    padding: 24px;
+    max-width: none;
+    flex-grow: 1;
+    transition: background 0.3s;
+  }
+
+  .sidebar a:first-child { 
+    justify-content: center;
+  }
+
+  .page {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .content {
+    padding: 40px
+  }
+}

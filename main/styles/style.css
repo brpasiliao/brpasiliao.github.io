@@ -1,142 +1,104 @@
-@font-face {
-  font-family: "Glacial Indifference";
-  src: url(../fonts/glacial-indifference.regular.otf);
-}
-@font-face {
-  font-family: "Calling Code";
-  src: url(../fonts/CallingCode-Regular.ttf);
-}
-@font-face {
-  font-family: "Roboto";
-  src: url(../fonts/Roboto-Regular.ttf);
-}
-@font-face {
-  font-family: "GameOverCre";
-  src: url(../fonts/gameovercre1.ttf);
-}
-@font-face {
-  font-family: "Sprinkle";
-  src: url(../fonts/Sprinkle-Regular.ttf);
-}
-@font-face {
-  font-family: "Baby Doll";
-  src: url(../fonts/Baby\ Doll.ttf);
-}
-
-
-html {
-  --yellow: #f9cc71;
-  --whitish: #f4ebde;
-  --blackish: #313447;
-  --grey: #999999;
-  --pink: #f69b8c;
-  --green: #b3df72;
-}
-
-body {
-  margin: 0;
-  color: var(--blackish);
-}
+/* main */
 
 h1 {
-  font-size: 90px;
-  font-family: "Glacial Indifference";
+  font-size: 3rem;
+  margin: 0;
   text-align: center;
-  margin: 0 0 20px 0;
 }
 
-h2 {
-  font-size: 32px;
-  font-weight: normal;
-  margin: 0 0 1em 0;
-}
+/* sidebar */
 
-p {
-  font-size: 32px;
-  font-family: "Roboto";
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.row {
+.sidebar {
   display: flex;
-  height: 50vh;
-  transition: height 0.3s ease-in-out;
-}
-
-.item {
-  width: 50%;
-  padding: 50px;
-  transition: width 0.3s ease-in-out, filter 0.3s ease-in-out;
-  overflow: hidden;
-}
-
-.item:hover {
-  filter: saturate(130%);
-}
-
-/* name */
-
-#name {
-  background-color: var(--yellow);
-  display: flex;
-  justify-content: center;
+  flex-direction: row;
+  font-size: 1.25rem;
+  width: 100%;
+  height: auto;
+  position: relative;
+  flex-wrap: wrap;
   align-items: center;
-  padding-bottom: 65px;
-}
-
-#links {
-  display: flex;
   justify-content: center;
+  text-align: center;
 }
 
-#links a {
-  padding: 0 20px;
+.sidebar a {
+  display: block;
+  padding: 24px;
+  max-width: none;
+  flex-grow: 1;
+  transition: background 0.3s;
 }
 
-#links img {
-  width: 50px;
-  height: 50px;
+#sidebar-name { background-color: var(--whitish); }
+
+#sidebar-professional { background-color: var(--pink); }
+#sidebar-professional:hover { background-color: var(--dark-pink); }
+#sidebar-professional:active { background-color: var(--darker-pink); }
+
+#sidebar-personal { background-color: var(--green); }
+#sidebar-personal:hover { background-color: var(--dark-green); }
+#sidebar-personal:active { background-color: var(--darker-green); }
+
+#sidebar-about { background-color: var(--yellow); }
+#sidebar-about:hover { background-color: var(--dark-yellow); }
+#sidebar-about:active { background-color: var(--darker-yellow); }
+
+#sidebar-contact { background-color: var(--blackish); color: var(--whitish); }
+#sidebar-contact:hover { background-color: var(--light-blackish); }
+#sidebar-contact:active { background-color: var(--lighter-blackish); }
+
+.sidebar img {
+  width: 24px;
+  margin: auto 15px auto 0;
   filter: invert(15%) sepia(8%) saturate(2474%) hue-rotate(194deg)
     brightness(97%) contrast(84%);
 }
 
+.sidebar a:first-child { 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+/* content */
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 75px;
+}
+
+/* text cursor */
+
+@keyframes blink {
+  0%    {opacity: 0;}
+  20%   {opacity: 1;}
+  50%   {opacity: 1;}
+  70%   {opacity: 0;}
+  100%  {opacity: 0;}
+}
+
+#pipe {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
 /* game */
 
-#game {
-  justify-content: space-between;
-  background-color: var(--whitish);
-  font-family: "GameOverCre";
-}
-
-#game img {
-  filter: none;
-}
-
 #game-row {
+  margin-top: 75px;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: calc(100% - 67px);
 }
 
-#pad {
-  /* margin: auto 30px auto 20px; */
-  margin: auto 30px auto 0;
-  display: block;
-  position: relative;
-}
-
-#pad img {
-  width: 120px;
-  height: 120px;
-}
-
 #gif {
-  width: 60%;
+  min-width: 300px;
+  width: 30%;
   height: auto;
-  margin: 0 auto;
   border: var(--blackish) 8px solid;
   position: relative;
 }
@@ -159,19 +121,39 @@ a {
   object-position: center;
 }
 
+#pad {
+  margin-right: 50px;
+  display: block;
+  position: relative;
+}
+
+#pad img {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+}
+
 .sensor {
   position: absolute;
 }
 
+.sensor:hover {
+  background-color: var(--blackish-alpha1);
+}
+
+.sensor:active {
+  background-color: var(--blackish-alpha2);
+}
+
 #up {
   width: 33.33%;
-  height: 28%;
+  height: 33.5%;
   top: 0;
   left: 35%;
 }
 
 #right {
-  width: 29%;
+  width: 35%;
   height: 33%;
   top: 28.5%;
   right: 0;
@@ -179,309 +161,115 @@ a {
 
 #down {
   width: 33.33%;
-  height: 27.8%;
+  height: 34%;
   bottom: 8.33%;
   left: 35%;
 }
 
 #left {
-  width: 29%;
+  width: 35%;
   height: 33%;
   top: 28.5%;
   left: 5%;
 }
 
-/* software */
-
-#software {
-  background-color: var(--blackish);
-  color: var(--whitish);
-  font-family: "Calling Code";
-}
-
-#software p {
-  margin: 0;
-  font-family: inherit;
-}
-
-.class {
-  color: var(--yellow);
-}
-
-.function {
-  color: var(--pink);
-}
-
-.string {
-  color: var(--green);
-}
-
-.comment {
-  color: var(--grey);
-}
-
-#console {
-  display: none;
-}
-
-#caret {
-  font-weight: 900;
-  position: relative;
-  top: -3px;
-  left: -3px;
-}
-
-/* art */
-
-#art {
-  background-color: var(--pink);
-  font-family: "Sprinkle";
-}
-
-.special {
-  font-family: "Baby Doll";
-}
-
-#drawings {
-  max-width: 100%;
-  max-height: calc(100% - 67px);
-  display: grid;
-  grid-template-columns: repeat(6, 16.67%);
-  grid-template-rows: repeat(3, 33.33%);
-  grid-template-areas: 
-    "a a a b c d"
-    "a a a e f d"
-    "g h h i f d";
-}
-
-#drawings img {
-  margin: auto;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.a {
-  grid-area: a;
-}
-
-.d {
-  grid-area: d;
-}
-
-.f {
-  grid-area: f;
-}
-
-.h {
-  grid-area: h;
-}
-
-/* scrollbar */
-
-::-webkit-scrollbar {
+#buttons {
+  margin-left: 50px;
   display: block;
-  width: 10px;
-  height: 10px;
+  position: relative;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
- 
-::-webkit-scrollbar-thumb {
-  background: #00000044; 
-  border-radius: 10px;
+#buttons img {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #00000066; 
+.button {
+  position: absolute;
 }
 
-@media only screen and (max-width: 400px) {
-  h1 {
-    font-size: 10.91vw;
-  }
+.button:hover {
+  background-color: var(--blackish-alpha1);
+}
 
-  h2 {
-    font-size: 4.85vw;
-  }
+.button:active {
+  background-color: var(--blackish-alpha2);
+}
 
-  p {
-    font-size: 4.85vw;
-  }
+#happy {
+  width: 34%;
+  height: 34%;
+  top: 4.5%;
+  right: 4.5%;
+}
 
-  .row {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .item {
-    display: block;
-    width: auto;
-    height: 50vw;
-    transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
-    padding: 8%;
-  }
+#sad {
+  width: 34%;
+  height: 34%;
+  bottom: 9%;
+  left: 9%;
+}
 
-  #name {
-    padding-bottom: 30px;
-  }
+/* responsive */
 
-  #links a {
-    padding: 0 15px;
-  }
-
-  #links img {
-    width: 30px;
-    height: 30px;
+@media screen and (max-width: 850px) {
+  #game-row {
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   #gif {
-    border: var(--blackish) 5px solid;
+    flex-basis: 100%;
+    order: 1;
+    min-width: 100px;
+    max-width: 500px;
+    margin-bottom: 50px;
+    padding: 0 auto;
   }
 
-  #game-row {
-    height: calc(100% - 3px - 9.7vw);
+  #break {
+    order: 2;
+    flex-basis: 100%;
+    width: 0%;
   }
 
-  #drawings {
-    max-height: calc(100% - 3px - 9.7vw);
+  #pad {
+    order: 3;
+    margin: 0;
   }
 
-  #pad img {
-    width: 60px;
-    height: 60px;
+  #buttons {
+    order: 4;
+    margin: 0;
   }
 }
 
-@media only screen and (min-width: 401px) and (max-width: 660px) {
-  h1 {
-    font-size: 10.91vw;
-  }
-
-  h2 {
-    font-size: 4.85vw;
-  }
-
-  p {
-    font-size: 4.85vw;
-  }
-
-  .row {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .item {
-    display: block;
-    width: auto;
-    height: 50vw;
-    transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
-  }
-
-  #links img {
-    width: 40px;
-    height: 40px;
-  }
-
-  #game-row {
-    height: calc(100% - 3px - 9.7vw);
-  }
-
-  #pad img {
-    width: 100px;
-    height: 100px;
-  }
-
-  #drawings {
-    max-height: calc(100% - 3px - 9.7vw);
+@media screen and (max-width: 450px) {
+  .page {
+    padding: 40px;
   }
 }
 
-@media only screen and (min-width: 661px) and (max-width: 800px) {
-  .row {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .item {
-    display: block;
-    width: auto;
-    height: 50vw;
-    transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
-  }
-}
-
-@media only screen and (min-width: 801px) and (max-width: 1000px) {
-  h1 {
-    font-size: 7.2vw;
+@media screen and (max-width: 350px) {
+  .page {
+    padding: 40px;
   }
 
-  h2 {
-    font-size: 3.2vw;
+  #gif {
+    margin-bottom: 40px;
   }
 
-  p {
-    font-size: 3.2vw;
+  #buttons {
+    order: 2;
+    margin-bottom: 40px;
   }
 
-  #game-row {
-    height: calc(100% - 3px - 6.4vw);
+  #break {
+    order: 3;
   }
 
-  #drawings {
-    max-height: calc(100% - 3px - 6.4vw);
-  }
-
-  #pad img {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-@media only screen and (min-width: 1450px) {
-  h1 {
-    font-size: 5vw;
-  }
-
-  h2 {
-    font-size: 2.22vw;
-  }
-
-  p {
-    font-size: 2.22vw;
-  }
-
-  #game-row {
-    height: calc(100% - 3px - 4.44vw);
-  }
-
-  #links img {
-    width: 60px;
-    height: 60px;
-  }
-
-  #pad img {
-    width: 160px;
-    height: 160px;
-  }
-
-  #drawings {
-    max-height: calc(100% - 3px - 4.44vw);
-  }
-}
-
-@media only screen and (min-width: 2000px) {
-  #pad img {
-    width: 200px;
-    height: 200px;
-  }
-
-  #links img {
-    width: 70px;
-    height: 70px;
+  #pad {
+    order: 4;
   }
 }

@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Calling Code";
+  src: url(../fonts/CallingCode-Regular.ttf);
+}
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url(../fonts/glacial-indifference.regular.otf);
+}
+
+html {
+  --whitish: #f4ebde;
+  --dark-whitish: rgb(205, 198, 192);
+  --whitish-alpha1: #f4ebde33;
+  --whitish-alpha2: #f4ebde55;
+  --whitish-alpha3: #f4ebde77;
+  --blackish: #313447;
+  --blackish-alpha1: #31344733;
+  --blackish-alpha2: #31344755;
+  --blackish-alpha3: #31344777;
+  --light-blackish: rgb(89, 88, 102);
+  --lighter-blackish: rgb(113, 113, 122);
+  --pink: #f69b8c;
+  --dark-pink: rgb(206, 134, 127);
+  --darker-pink: rgb(182, 120, 116);
+  --green: #b3df72;
+  --dark-green: rgb(152, 189, 105);
+  --darker-green: rgb(136, 166, 100);
+  --yellow: #f9cc71;
+  --dark-yellow: rgb(209, 174, 107);
+  --darker-yellow: rgb(184, 153, 101);
+
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  color: var(--blackish);
+  font-family: "Calling Code";
+  background: var(--whitish);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}

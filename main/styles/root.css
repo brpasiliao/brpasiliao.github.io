@@ -1,0 +1,105 @@
+/* main */
+
+h1 {
+  font-size: 3.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+p {
+  font-family: "Glacial Indifference";
+  line-height: 1.3rem;
+}
+
+/* sidebar */
+
+.sidebar {
+  padding-top: 75px;
+  width: 250px;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+}
+
+.sidebar a {
+  display: block;
+  padding: 24px;
+  transition: background 0.3s;
+}
+
+.sidebar a.current {
+  background-color: var(--whitish);
+}
+
+.sidebar a:first-child:hover:not(.current) { background-color: var(--whitish); }
+.sidebar a:first-child:active:not(.current) { background-color: var(--dark-whitish); }
+
+.sidebar a:nth-child(2):hover:not(.current) { background-color: var(--pink); }
+.sidebar a:nth-child(2):active:not(.current) { background-color: var(--dark-pink); }
+
+.sidebar a:nth-child(3):hover:not(.current) { background-color: var(--green); }
+.sidebar a:nth-child(3):active:not(.current) { background-color: var(--dark-green); }
+
+.sidebar a:nth-child(4):hover:not(.current) { background-color: var(--yellow); }
+.sidebar a:nth-child(4):active:not(.current) { background-color: var(--dark-yellow); }
+
+.sidebar a:nth-child(5):hover:not(.current) { background-color: var(--blackish); color: var(--whitish); }
+.sidebar a:nth-child(5):active:not(.current) { background-color: var(--light-blackish); }
+
+.sidebar img {
+  width: 24px;
+  margin: auto 15px auto 0;
+  filter: invert(15%) sepia(8%) saturate(2474%) hue-rotate(194deg)
+    brightness(97%) contrast(84%);
+}
+
+.sidebar a:first-child { 
+  display: flex;
+  align-items: center; 
+  justify-content: left;
+}
+
+/* page */
+
+.page {
+  margin-left: 250px;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 75px;
+}
+
+.link {
+  text-decoration: underline;
+  transition: background-color 0.3s;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #00000044; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00000066; 
+}

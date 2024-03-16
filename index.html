@@ -2,72 +2,42 @@
 <html lang="en">
   <head>
     <title>Bian Pasiliao</title>
-    <link rel="stylesheet" href="main/styles/style.css" />
+    <link rel="icon" type="image/x-icon" href="main/icons/favicon.png">
     <script src="main/scripts/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main/styles/global.css" />
+    <link rel="stylesheet" href="main/styles/style.css" />
   </head>
   <body>
-    <div id="row1" class="row">
-      <div id="name" class="item col1">
-        <div id="name-content">
-          <h1>Bian Pasiliao</h1>
-          <div id="links">
-            <a href="mailto:brpasiliao@gmail.com" target="_blank">
-              <img src="main/icons/email.png" />
-            </a>
-            <a href="https://linkedin.com/in/brpasiliao/" target="_blank">
-              <img src="main/icons/linkedin.png" />
-            </a>
-            <a href="https://github.com/brpasiliao" target="_blank">
-              <img src="main/icons/github.png" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <a id="game" class="item col2" href="game.html">
-        <h2>GAME DEVELOPMENT</h2>
-        <div id="game-row">
-          <div id="pad">
-            <img src="main/sprites/pad.png" />
-            <div id="up" class="sensor"></div>
-            <div id="right" class="sensor"></div>
-            <div id="down" class="sensor"></div>
-            <div id="left" class="sensor"></div>
-          </div>
-          <div id="gif">
-            <img src="main/sprites/still.png" />
-          </div>
-        </div>
-      </a>
+    <div class="sidebar">
+      <a id="sidebar-name" class="active" href="#"><img src="main/icons/logo.png"><span>Bian Pasiliao</span></a>
+      <a id="sidebar-professional" href="professional.html">Professional Experience</a>
+      <a id="sidebar-personal" href="personal.html">Personal Projects</a>
+      <a id="sidebar-about" href="about.html">About</a>
+      <a id="sidebar-contact" href="contact.html">Contact</a>
     </div>
 
-    <div id="row2" class="row">
-      <a id="software" class="item col1" href="software.html">
-        <h2>SOFTWARE ENGINEERING</h2>
-        <div id="code">
-          <p><span class="class">System</span>.out.<span class="function">print</span>&#8203;(<span class="string">"Hello world!"</span>);</p>
-          <p><span class="class">Console</span>.<span class="function">Write</span>&#8203;(<span class="string">"Hey world!"</span>);</p>
-          <p>console.<span class="function">log</span>&#8203;(<span class="string">"Hi world!"</span>);</p>
+    <div class="page">
+      <h1 id="commentary"><span id="typed"></span><span id="pipe">|</span></h2>
 
-          <p id="console"><br><span id="typed"></span><span id="caret">|</span></p>
+      <div id="game-row">
+        <div id="pad">
+          <img src="main/sprites/pad.png" />
+          <div id="up" class="sensor"></div>
+          <div id="right" class="sensor"></div>
+          <div id="down" class="sensor"></div>
+          <div id="left" class="sensor"></div>
         </div>
-      </a>
-
-      <a id="art" class="item col2" href="art.html">
-        <h2>ART <span class="special">&</span> DESIGN</h2>
-        <div id="drawings">
-          <img class="a" src="main/images/home/a.png" onmousemove="erase(this)" onmouseout="draw(this)"/>
-          <img class="b" src="main/images/home/b.png" onmousemove="erase(this)" onmouseout="draw(this)"/>
-          <img class="c" src="main/images/home/c.png" onmousemove="erase(this)" onmouseout="draw(this)"/>
-          <img class="d" src="main/images/home/d.png" onmousemove="erase(this)" onmouseout="draw(this)"/>
-          <img class="e" src="main/images/home/e.png" onmousemove="erase(this)" onmouseout="draw(this)"/>
-          <img class="f" src="main/images/home/f.png" onmousemove="erase(this)" onmouseout="draw(this)"/>
-          <img class="g" src="main/images/home/g.png" onmousemove="erase(this)" onmouseout="draw(this)"/>
-          <img class="h" src="main/images/home/h.png" onmousemove="erase(this)" onmouseout="draw(this)"/>
-          <img class="i" src="main/images/home/i.png" onmousemove="erase(this)" onmouseout="draw(this)"/>
+        <div id="gif">
+          <img src="main/sprites/still_happy.png" />
         </div>
-      </a>
+        <div id="buttons">
+          <img src="main/sprites/buttons.png" />
+          <div id="happy" class="button"></div>
+          <div id="sad" class="button"></div>
+        </div>
+        <div id="break"></div>
+      </div>
     </div>
   </body>
 </html>

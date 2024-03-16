@@ -1,0 +1,109 @@
+/* main */
+
+h2 {
+  margin: 5px 0 10px;
+}
+
+h3 {
+  margin: 5px 0 3px;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  font-family: "Glacial Indifference";
+  line-height: 1.3rem;
+}
+
+/* sidebar */
+
+.sidebar {
+  background-color: var(--blackish);
+  color: var(--whitish);
+}
+
+.sidebar a.current {
+  color: var(--blackish);
+}
+
+.sidebar a:hover:not(.current) {
+  color: var(--blackish);
+}
+
+.sidebar a:active:not(.current) {
+  background-color: var(--whitish-alpha1);
+}
+
+.sidebar img {
+  width: 24px;
+  margin: auto 10px auto 0;
+  filter: invert(95%) sepia(77%) saturate(350%) hue-rotate(299deg) 
+    brightness(106%) contrast(91%);
+}
+
+.sidebar a:first-child:hover > img { 
+  filter: invert(15%) sepia(8%) saturate(2474%) hue-rotate(194deg)
+    brightness(97%) contrast(84%);
+}
+
+/* page */
+
+.content {
+  max-width: 800px;
+}
+
+.link:hover {
+  background-color: var(--blackish-alpha1);
+}
+
+.link:active {
+  background-color: var(--blackish-alpha2);
+}
+
+/* sections */
+
+.section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts img {
+  max-width: 100px;
+  filter: invert(15%) sepia(8%) saturate(2474%) hue-rotate(194deg)
+    brightness(97%) contrast(84%);
+}
+
+.contacts a {
+  width: 150px;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.icon1:hover { background-color: var(--pink); }
+.icon1:active { background-color: var(--dark-pink); }
+
+.icon2:hover { background-color: var(--green); }
+.icon2:active { background-color: var(--dark-green); }
+
+.icon3:hover { background-color: var(--yellow); }
+.icon3:active { background-color: var(--dark-yellow); }
+
+/* responsive */
+
+@media screen and (max-width: 500px) {
+  .contacts {
+    flex-wrap: wrap;
+  }
+
+  .contacts img {
+    width: 80px;
+  }
+}
