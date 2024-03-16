@@ -36,8 +36,6 @@ ul {
   margin-top: 50px;
 }
 
-/* introduction */
-
 #introduction img {
   float: left;
   width: 35%;
@@ -52,7 +50,18 @@ ul {
   margin-top: 0;
 }
 
+#resume {
+  margin-top: 75px;
+  text-align: center;
+}
+
 /* responsive */
+
+@media screen and (max-width: 600px) {
+  #resume {
+    margin-top: 50px;
+  }
+}
 
 @media screen and (max-width: 450px) {
   .section {
@@ -63,5 +72,9 @@ ul {
     width: 100%;
     padding: 4%;
     margin-bottom: 15px;
+  }
+
+  #resume {
+    font-size: 1.25rem;
   }
 }
