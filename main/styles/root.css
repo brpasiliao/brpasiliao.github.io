@@ -27,6 +27,7 @@ p {
   display: flex;
   flex-direction: column;
   font-size: 1.25rem;
+  box-shadow: 0 0 10px var(--blackish-alpha1);
 }
 
 .sidebar a {
@@ -56,7 +57,7 @@ p {
 
 .sidebar img {
   width: 24px;
-  margin: auto 15px auto 0;
+  margin: auto 12px auto 0;
   filter: invert(15%) sepia(8%) saturate(2474%) hue-rotate(194deg)
     brightness(97%) contrast(84%);
 }

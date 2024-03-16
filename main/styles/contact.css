@@ -104,6 +104,12 @@ ul {
   }
 
   .contacts img {
-    width: 80px;
+    width: 70px;
+  }
+
+  .contacts a {
+    width: 100px;
+    padding: 10px;
+    transition: background 0.3s;
   }
 }

@@ -19,6 +19,7 @@ h1 {
   align-items: center;
   justify-content: center;
   text-align: center;
+  box-shadow: 0 0 10px var(--blackish-alpha1);
 }
 
 .sidebar a {
@@ -49,7 +50,7 @@ h1 {
 
 .sidebar img {
   width: 24px;
-  margin: auto 15px auto 0;
+  margin: auto 12px auto 0;
   filter: invert(15%) sepia(8%) saturate(2474%) hue-rotate(194deg)
     brightness(97%) contrast(84%);
 }
@@ -95,6 +96,12 @@ h1 {
   height: calc(100% - 67px);
 }
 
+.controls {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+}
+
 #gif {
   min-width: 300px;
   width: 30%;
@@ -125,12 +132,6 @@ h1 {
   margin-right: 50px;
   display: block;
   position: relative;
-}
-
-#pad img {
-  max-width: 120px;
-  width: 100%;
-  height: auto;
 }
 
 .sensor {
@@ -179,12 +180,6 @@ h1 {
   position: relative;
 }
 
-#buttons img {
-  max-width: 120px;
-  width: 100%;
-  height: auto;
-}
-
 .button {
   position: absolute;
 }
@@ -228,48 +223,83 @@ h1 {
     padding: 0 auto;
   }
 
-  #break {
-    order: 2;
-    flex-basis: 100%;
-    width: 0%;
-  }
-
   #pad {
-    order: 3;
+    order: 2;
     margin: 0;
   }
 
   #buttons {
-    order: 4;
+    order: 3;
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .sidebar a {
+    padding: 20px;
+  }
+  
+  .page {
+    padding: 40px;
+  }
+
+  #game-row {
+    margin-top: 40px;
+  }
+
+  .controls {
+    max-width: 100px;
+  }
+
+  #gif {
+    margin-bottom: 30px;
   }
 }
 
 @media screen and (max-width: 450px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .sidebar {
+    font-size: 1rem;
+  }
+
+  .sidebar a {
+    padding: 16px;
+  }
+
+  .sidebar img {
+    width: 20px;
+  }
+  
   .page {
-    padding: 40px;
+    padding: 30px;
+  }
+
+  #game-row {
+    margin-top: 30px;
   }
 }
 
 @media screen and (max-width: 350px) {
-  .page {
-    padding: 40px;
+  .controls {
+    max-width: 80px;
   }
-
+  
   #gif {
-    margin-bottom: 40px;
-  }
-
-  #buttons {
-    order: 2;
-    margin-bottom: 40px;
-  }
-
-  #break {
-    order: 3;
-  }
-
-  #pad {
-    order: 4;
+    margin-bottom: 30px;
   }
 }

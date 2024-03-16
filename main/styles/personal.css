@@ -58,3 +58,16 @@
 .special {
   font-family: monospace;
 }
+
+/* responsive */
+
+@media screen and (max-width: 450px) {
+  .projects {
+    margin: 25px auto 0;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .project {
+    min-width: 200px;
+  }
+}

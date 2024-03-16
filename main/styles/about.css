@@ -55,6 +55,10 @@ ul {
 /* responsive */
 
 @media screen and (max-width: 450px) {
+  .section {
+    margin-top: 25px;
+  }
+
   #introduction img {
     width: 100%;
     padding: 4%;

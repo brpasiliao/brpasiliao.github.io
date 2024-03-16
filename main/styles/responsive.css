@@ -38,8 +38,38 @@
   h2 {
     font-size: 1.75rem;
   }
+
+  .sidebar a {
+    padding: 20px;
+  }
   
   .content {
     padding: 40px
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .sidebar {
+    font-size: 1rem;
+  }
+
+  .sidebar a {
+    padding: 16px;
+  }
+
+  .sidebar img {
+    width: 20px;
+  }
+  
+  .content {
+    padding: 20px;
   }
 }
